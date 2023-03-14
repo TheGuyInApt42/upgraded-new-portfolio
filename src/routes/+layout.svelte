@@ -1,45 +1,110 @@
 <script>
-	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
+	// Start: Local Imports
+	import { onMount } from 'svelte';
+
+	// Start: External Imports
+
+	// End: External Imports
+	import '../styles/tailwind.postcss';
+
+	// Core services
+	// Store Imports
+	import { theme } from '@stores';
+
+	// Components
+	import Header from '@components/header/Header.svelte';
+	import MobileNav from '@components/nav/MobileNav.svelte';
+	import DesktopNav from '@components/nav/DesktopNav.svelte';
+	import FtmFooter from '@components/footer/FTMFooter.svelte';
+	import Footer from '@components/footer/Footer.svelte';
+	import RouteTransition from '@components/route-transition/RouteTransition.svelte';
+	import CompiledStyles from '@components/compiled-styles/CompiledStyles.svelte';
+	import Analytics from '@components/analytics/Analytics.svelte';
+	import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
+
+
+	// End: Local Imports
+
+	// Start: Local component properties
+	export let path = '';
+
+
+	const navLinks = [
+		{
+			path: '/',
+			label: 'Home',
+		},
+		{
+			path: '/about',
+			label: 'About',
+		},
+		{
+			path: '/#projects',
+			label: 'Projects',
+		},
+
+		{
+			path: '/services',
+			label: 'Services',
+		},
+		{
+			path: '/contact',
+			label: 'Contact',
+		},
+	];
+
+	const stylesList = [
+		{
+			url: '/tailwind.css',
+		},
+	];
+	// End: Local component properties
+	onMount(async () => {
+		let html = document.getElementsByTagName('html').item(0);
+		html.className = $theme;
+	});
+
+	// Start: Local component methods
+
+	const toggleThemeMode = (event) => {
+		const htmlTag = document.getElementsByTagName('html').item(0);
+		htmlTag.className = event.detail.dark ? 'dark' : 'light';
+	};
+
+	// End: Local component methods
 </script>
 
-<Header />
+<GoogleAnalytics properties="{['G-VRMPNCPJGE']}" />
+<!-- <Analytics /> -->
 
-<main>
-	<slot />
-</main>
+<CompiledStyles cssFiles="{stylesList}" />
 
-<footer>
-	<p class="text-3xl font-bold underline">visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
+<div class="bg-white dark:bg-black">
+	<!-- Start: Header Navigation -->
 
-<style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+	<Header
+		on:toggleTheme="{(e) => toggleThemeMode(e)}"
+		navLinks="{navLinks}"
+		logoImage="{'https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.png'}"
+		title="{''}"
+		useThemeModeButton="{true}"
+		useTitleAndLogo="{true}"
+	/>
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
+	<MobileNav />
+	<!--
+    <DesktopNav/>
+    -->
 
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
-</style>
+	<!-- End: Header Navigation -->
+	<main id="skip" class="flex flex-col justify-center bg-white dark:bg-black">
+		<!-- Start: Defaull layout slot -->
+		<RouteTransition referesh="{path}">
+			<slot />
+		</RouteTransition>
+		<!-- End: Defaull layout slot -->
+		<!-- Start: Footer -->
+		<FtmFooter />
+		<!-- End: Footer -->
+	</main>
+</div>

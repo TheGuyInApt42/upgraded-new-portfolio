@@ -1,34 +1,48 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
+<script>
+	// Start: Local Imports
+	// Components
+	import HeadTags from '@components/head-tags/HeadTags.svelte';
+	import ExternalLink from '@components/external-link/ExternalLink.svelte';
 
-<div class="content">
-	<h1>About this app</h1>
+	// End: Local Imports
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+	// Start: Local component properties
+	/**
+	 * @type {IMetaTagProperties}
+	 */
+	const metaData = {
+		title: 'About | GWC',
+		description: 'About page of Gorham Web Consulting',
+		url: '/about',
+		keywords: ['about', 'bio', 'gorham web consulting about', 'ralph jarrod gorham'],
+		searchUrl: '/about',
+	};
+	// End: Local component properties
+</script>
 
-	<pre>npm create svelte@latest</pre>
+<!-- Start: Header Tag -->
+<HeadTags metaData="{metaData}" />
+<!-- End: Header Tag -->
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+<!-- Start: About page section -->
+<div class="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 p-8 lg:p-0">
+	<h1 class="font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:text-white"> About GWC </h1>
+	<div class="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
+		<p>
+			Hi, I am Ralph Gorham. I'm a web developer based in Mount Vernon, New York. You can learn more about me and
+			my interests on my
+			<ExternalLink href="https://ralphjgorham.com">personal site.</ExternalLink>
+		</p>
+		<p>
+			I currently work as a Front End Developer at Touro University as well as being open to working on freelance
+			contracts. I have years of experience in developing well-designed websites as well as general experience in
+			the tech industry.
+		</p>
 
-	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
-	</p>
+		<p
+			>If you are interested in creating a website or optimizing and redesigning your website, get in touch with
+			me.
+		</p>
+	</div>
 </div>
-
-<style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-	}
-</style>
+<!-- End: About page section -->
