@@ -3,7 +3,8 @@
 
 	// Components
 	
-	import { NavigationBar } from '@components/navigation-bar/NavigationBar.svelte';
+	import NavigationBar from '@components/navigation-bar/NavigationBar.svelte';
+	import NavigationProgressBar from '@components/navigation-progress-bar/NavigationProgressBar.svelte'
 	// End: Local Imports
 
 	// Start: Exported Properties
@@ -23,7 +24,7 @@
 </script>
 
 <!-- Start: Navigation Progress bar -->
-
+<NavigationProgressBar />
 <!-- End: Navigation Progress bar -->
 
 <!-- Start: Navigation bar -->

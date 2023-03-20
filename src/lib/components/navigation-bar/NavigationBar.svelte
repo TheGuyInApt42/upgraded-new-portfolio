@@ -127,7 +127,7 @@
 		{/if}
 		<div class="flex flex-row items-center">
 			{#each navLinks as navLink, index (navLink.path)}
-				<a sveltekit:prefetch href="{navLink.path}" class="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+				<a data-sveltekit-preload-data="hover" href="{navLink.path}" class="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
 					{navLink.label}
 				</a>
 			{/each}
