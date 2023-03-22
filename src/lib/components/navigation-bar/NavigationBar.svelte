@@ -58,14 +58,15 @@
 	});
 </script>
 
+
 {#if useThemeModeButton}
 	<button
 		on:click="{() => toggleTheme()}"
 		aria-label="Toggle Dark Mode"
 		type="button"
 		class="{useTitleAndLogo
-			? 'sticky-theme-mode-button w-10 h-10 p-3 bg-gray-200 rounded-full dark:bg-gray-800'
-			: 'w-10 h-10 p-3 bg-gray-200 rounded-full dark:bg-gray-800'}"
+			? 'sticky-theme-mode-button md:w-10 md:h-10 md:p-3 bg-gray-200 rounded-full dark:bg-gray-800 w-6 h-6 p-1'
+			: 'md:w-10 md:h-10 md:p-3 bg-gray-200 rounded-full dark:bg-gray-800 w-6 h-6 p-1'}"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

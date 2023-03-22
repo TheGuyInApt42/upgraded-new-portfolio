@@ -97,14 +97,21 @@
     -->
 
 	<!-- End: Header Navigation -->
-	<main id="skip" class="flex flex-col justify-center bg-white dark:bg-black">
+	<main id="skip" class="flex flex-col justify-center bg-white dark:bg-black p-4 md:p-0">
 		<!-- Start: Defaull layout slot -->
 		<RouteTransition referesh="{path}">
 			<slot />
 		</RouteTransition>
 		<!-- End: Defaull layout slot -->
 		<!-- Start: Footer -->
-		<FtmFooter />
+		
 		<!-- End: Footer -->
 	</main>
+	<FtmFooter />
 </div>
+
+<style>
+	main{
+		max-width: 100vw;
+	}
+</style>

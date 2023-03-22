@@ -6,6 +6,16 @@
 		width: 200px;
 		height: 200px;
 	}
+
+	@media screen and (max-width: 350px){
+		nav{
+			width: 100vw;
+		}
+
+		.fake-element{
+			display: none;
+		}
+	}
 </style>
 
 <script>
@@ -64,11 +74,43 @@
 <!-- Navbar (mobile) -->
 
 <nav
-	role="navigation"
-	class="sticky flex justify-center items-center top-0 px-4 bg-white z-40 
+	class="sticky flex justify-between items-center top-0 px-4 bg-white z-40 
     border-b border-gray-5 border-opacity-5 shadow-sm md:hidden py-3 
     h-28 dark:bg-black"
 >
+	<!-- Hidden element for alignment -->
+	<div class="invisible fake-element">
+		<button class="p-2">
+		<svg
+			class="pointer-events-none stroke-current dark:text-white"
+			width="19"
+			height="15"
+			viewBox="0 0 19 15"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<title>Open Menu</title>
+			<path
+				d="M1.97498 1.97498H17.975"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"></path>
+			<path
+				d="M1.97498 7.97498H17.975"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"></path>
+			<path
+				d="M1.97498 13.975H17.975"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"></path>
+		</svg>
+	</button>
+	</div>
 	<!-- Logo -->
 	<div class="overflow-hidden h-16">
 		<a href="/" class="relative bottom-16">
