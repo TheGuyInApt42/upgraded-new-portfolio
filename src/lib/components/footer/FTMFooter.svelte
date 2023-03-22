@@ -9,6 +9,7 @@
 
 	let iconColor;
 	let mobile = false;
+	let tablet = false;
 
 	$: if ($theme == 'dark') iconColor = 'white';
 	else iconColor = 'black';
@@ -18,29 +19,38 @@
 	onMount(async () => {
 		// Define the query https://css-tricks.com/working-with-javascript-media-queries/
 		const mobileDevice = window.matchMedia('(max-width: 768px)');
+		const tabletDevice = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
 
 		mobileDevice.addEventListener('change', handleDeviceChange);
+		tabletDevice.addEventListener('change', handleTabletChange);
 
 		function handleDeviceChange(e) {
 			if (e.matches) mobile = true;
 			else mobile = false;
 		}
 
+		function handleTabletChange(e) {
+			if (e.matches) tablet = true;
+			else tablet = false;
+		}
+
 		// Run it initially
 		handleDeviceChange(mobileDevice);
+		handleTabletChange(tabletDevice);
 	});
 </script>
 
 <footer
-	class="relative z-20 flex flex-col items-center justify-between px-4 pt-4 bg-white lg:bg-gray-100 lg:shadow-inner dark:bg-black"
+	class="relative z-20 flex flex-col items-center justify-between px-4 bg-white lg:bg-gray-100 lg:shadow-inner dark:bg-black pb-8 md:pb-2 max-w-[100vw]"
 >
+
 	<!-- Nav Links container -->
 	<!-- Menu Items -->
 	<div
 		class="text-sm list-none w-full max-w-screen-xl md:flex md:flex-row md:justify-between md:items-center  gap-x-8 opacity-75 lg:gap-x-16"
 	>
 		<!-- Logo -->
-		<div class="">
+		<div class="md:block flex justify-center">
 			<a href="/">
 				{#if $theme == 'dark'}
 					<img
@@ -54,8 +64,17 @@
 						src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.png"
 						alt="Logo"
 					/>
+
+				{:else if tablet && $theme == 'light'}
+					<img
+						class="logo"
+						src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.png"
+						alt="Logo"
+					/>
+
 				{:else}
 					<img
+						class="logo"
 						src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logofooter_gmoop3.png"
 						alt=""
 					/>
@@ -64,9 +83,9 @@
 		</div>
 
 		<!-- Menu items -->
-		<div class="flex flex-col justify-left max-w-max gap-y-2 md:gap-y-0 md:flex-row md:gap-x-12">
+		<div class="flex flex-col gap-y-2 md:gap-y-0 md:flex-row md:gap-x-12">
 			<!-- Menu Item -->
-			<div class="inline-block relative">
+			<div class="inline-block relative footer-link">
 				<li class="relative z-10 text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
 					><a href="/#projects" class="inline-block h-full w-full dark:text-white">Projects</a>
 				</li>
@@ -74,7 +93,7 @@
 			</div>
 
 			<!-- Menu Item -->
-			<div class="inline-block relative">
+			<div class="inline-block relative footer-link">
 				<li class="relative z-10 text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
 					><a href="/services" class="inline-block h-full w-full dark:text-white">Services</a>
 				</li>
@@ -82,7 +101,7 @@
 			</div>
 
 			<!-- Menu Item -->
-			<div class="inline-block relative">
+			<div class="inline-block relative footer-link">
 				<li class="relative z-10 text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
 					><a href="/contact" class="inline-block h-full w-full dark:text-white">Contact</a>
 				</li>
@@ -93,7 +112,7 @@
 		<!-- Social Links -->
 
 		<!-- Icons -->
-		<div class="flex opacity-75 mt-2 mb-2 justify-end md:gap-x-2 md:mt-0 md:mb-0">
+		<div class="flex opacity-75 mt-2 mb-2 justify-center md:justify-end md:gap-x-2 md:mt-0 md:mb-0">
 			<!-- Mail Icon -->
 			<ExternalLink
 				href="mailto:ralphjgorham@gmail.com"
@@ -179,8 +198,24 @@
 
 	<!-- Disclaimers -->
 	<div class="flex flex-col items-center opacity-50 text-xs md:mb-2 lg:mb-6 dark:text-white">
-		<div class="font-medium mb-1">&copy GWC 2022</div>
+		<div class="font-medium mb-1">&copy GWC 2023</div>
 	</div>
 
 	<!-- Copyright + Privacy Policy -->
 </footer>
+
+
+<style>
+	@media screen and (max-width: 1023px){
+		.footer-link{
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.logo{
+			margin-left: 32px;
+		}
+	}
+</style>
