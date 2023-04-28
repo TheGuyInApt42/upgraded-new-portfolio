@@ -89,8 +89,8 @@
 	const metaData = {
 		title: `Gorham Web Consulting`,
 		description:
-			'Sveltekit starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable project. (sveltekit, typescript, tailwindcss, postcss, husky, Storybook).',
-		keywords: ['Ralph Gorham', 'website development', 'small business website development'],
+			'Gorham Web Consulting is your stop for custom website design and development as well as your web needs.',
+		keywords: ['Ralph Gorham', 'website development', 'small business website development', 'custom websites', 'website design'],
 	};
 
 	const projects = [
@@ -135,6 +135,17 @@
 			url: 'https://whiterocknc.com',
 			imageSrc:
 				'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.png',
+			work: 'Web Design + Web Development + Hosting',
+			type: 'Small Business',
+		},
+		{
+			title: 'Demo Restaurat',
+			description:
+				'Sample Restaurant Website',
+			tools: 'SvelteKit',
+			url: 'https://demo-restaurant-basic-gzdm7lqu4-jarrodgorham.vercel.app/',
+			imageSrc:
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1682645863/Screenshot_2023-04-27_at_21-35-15_Good_Food_Home_makxet.png',
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Small Business',
 		},
