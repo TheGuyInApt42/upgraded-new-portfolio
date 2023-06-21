@@ -12,8 +12,12 @@
 
 <script>
 	import { useForm, Hint, HintGroup, validators, required, email, url, minLength } from 'svelte-use-form';
-
+	import { goto } from '$app/navigation';
 	const form = useForm();
+
+	function handleForm(){
+		goto('/success')
+	}
 </script>
 
 <!-- Container -->
@@ -150,7 +154,8 @@
 						netlify-honeypot="bot-field"
 						method="POST"
 						class="mt-6 md:h-full md:flex md:flex-col md:gap-y-6"
-						action="/success/"
+					
+						on:submit|preventDefault={handleForm}
 						use:form
 					>
 						<p class="hidden">
