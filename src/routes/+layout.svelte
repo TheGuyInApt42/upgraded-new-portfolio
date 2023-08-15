@@ -74,7 +74,8 @@
 	// End: Local component methods
 </script>
 
-<GoogleAnalytics properties="{['G-VRMPNCPJGE']}" />
+<GoogleAnalytics properties="{['G-VRMPNCPJGE', 'G-D0X54E5THK']}" />
+
 <!-- <Analytics /> -->
 
 <CompiledStyles cssFiles="{stylesList}" />

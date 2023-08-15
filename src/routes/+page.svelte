@@ -139,7 +139,7 @@
 			type: 'Small Business',
 		},
 		{
-			title: 'Demo Restaurat',
+			title: 'Demo Restaurant',
 			description:
 				'Sample Restaurant Website',
 			tools: 'SvelteKit',
