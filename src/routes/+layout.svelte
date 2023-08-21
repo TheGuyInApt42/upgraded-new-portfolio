@@ -88,7 +88,7 @@
 		navLinks="{navLinks}"
 		logoImage="{'https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.png'}"
 		title="{''}"
-		useThemeModeButton="{true}"
+		useThemeModeButton={false}
 		useTitleAndLogo="{true}"
 	/>
 
@@ -98,7 +98,7 @@
     -->
 
 	<!-- End: Header Navigation -->
-	<main id="skip" class="flex flex-col justify-center bg-white dark:bg-black p-4 md:p-0">
+	<main id="skip" class="flex flex-col md:justify-center bg-white dark:bg-black md:p-0">
 		<!-- Start: Defaull layout slot -->
 		<RouteTransition referesh="{path}">
 			<slot />

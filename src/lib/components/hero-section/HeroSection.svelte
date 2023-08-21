@@ -17,13 +17,13 @@
 			<a
 				href="/contact"
 				class="inline-block px-4 py-2 mb-8 font-medium text-black uppercase shadow-md bg-turquoise-accent"
-				><span class="text-lg opacity-75">Get Started</span></a
+				><span class="text-lg opacity-75">Hire Me</span></a
 			>
 		</div>
 	</div>
 
 	<!-- Hero image -->
-	<div class="md:h-80 lg:h-full h-60">
+	<div class="md:h-80 lg:h-full h-60 invisible md:visible">
 		<!-- Human and Icons -->
 		<div class="relative flex md:items-end h-full overflow-hidden md:-ml-20">
 			<!-- Human -->

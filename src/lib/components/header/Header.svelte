@@ -32,7 +32,7 @@
 	navLinks="{navLinks}"
 	logoImage="{logoImage}"
 	title="{title}"
-	useThemeModeButton="{useThemeModeButton}"
+	useThemeModeButton={true}
 	useTitleAndLogo="{useTitleAndLogo}"
 	on:toggleTheme
 />

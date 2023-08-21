@@ -47,10 +47,10 @@
 	<!-- Nav Links container -->
 	<!-- Menu Items -->
 	<div
-		class="text-sm list-none w-full max-w-screen-xl md:flex md:flex-row md:justify-between md:items-center  gap-x-8 opacity-75 lg:gap-x-16"
+		class="md:text-sm list-none w-full max-w-screen-xl md:flex md:flex-row md:justify-between md:items-center  gap-x-8 opacity-75 lg:gap-x-16"
 	>
 		<!-- Logo -->
-		<div class="md:block flex justify-center">
+		<div class="md:block justify-center hidden">
 			<a href="/">
 				{#if $theme == 'dark'}
 					<img
@@ -83,10 +83,10 @@
 		</div>
 
 		<!-- Menu items -->
-		<div class="flex flex-col gap-y-2 md:gap-y-0 md:flex-row md:gap-x-12">
+		<div class="flex flex-col gap-y-2 md:gap-y-0 md:flex-row md:gap-x-12 mb-5 md:mb-0">
 			<!-- Menu Item -->
 			<div class="inline-block relative footer-link">
-				<li class="relative z-10 text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
+				<li class="relative z-10 text-lg md:text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
 					><a href="/#projects" class="inline-block h-full w-full dark:text-white">Projects</a>
 				</li>
 				<div class="absolute bottom-0 h-1 w-full bg-accent hidden md:absolute lg:hidden"></div>
@@ -94,7 +94,7 @@
 
 			<!-- Menu Item -->
 			<div class="inline-block relative footer-link">
-				<li class="relative z-10 text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
+				<li class="relative z-10 text-lg md:text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
 					><a href="/services" class="inline-block h-full w-full dark:text-white">Services</a>
 				</li>
 				<div class="absolute bottom-0 h-1 w-full bg-accent hidden md:absolute lg:hidden"></div>
@@ -102,7 +102,7 @@
 
 			<!-- Menu Item -->
 			<div class="inline-block relative footer-link">
-				<li class="relative z-10 text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
+				<li class="relative z-10 text-lg md:text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
 					><a href="/contact" class="inline-block h-full w-full dark:text-white">Contact</a>
 				</li>
 				<div class="absolute bottom-0 h-1 w-full bg-accent hidden md:absolute lg:hidden"></div>
@@ -119,7 +119,7 @@
 				cssClasses="p-2 pl-0 inline-block md:pb-0"
 				ariaLabel="{'Footer Email link'}"
 				><svg
-					class="w-4"
+					
 					width="24"
 					height="24"
 					viewBox="0 0 24 24"
@@ -139,7 +139,7 @@
 				cssClasses="p-2 inline-block md:pb-0"
 				ariaLabel="{'Footer Twitter link'}"
 				><svg
-					class="w-4"
+					
 					width="24"
 					height="24"
 					viewBox="0 0 24 24"
@@ -159,7 +159,7 @@
 				cssClasses="p-2 inline-block md:pb-0 md:pr-0"
 				ariaLabel="{'Footer Facebook link'}"
 				><svg
-					class="w-4"
+					
 					width="24"
 					height="24"
 					viewBox="0 0 24 24"
@@ -197,7 +197,7 @@
 	</div>
 
 	<!-- Disclaimers -->
-	<div class="flex flex-col items-center opacity-50 text-xs md:mb-2 lg:mb-6 dark:text-white">
+	<div class="flex flex-col items-center opacity-50 md:mb-2 lg:mb-6 dark:text-white">
 		<div class="font-medium mb-1">&copy GWC 2023</div>
 	</div>
 

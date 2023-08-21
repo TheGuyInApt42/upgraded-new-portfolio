@@ -249,7 +249,7 @@
 						cssClasses="p-2 mx-2 pl-0 inline-block"
 						ariaLabel="{'Footer Email link'}"
 						><svg
-							class="w-4"
+							
 							width="24"
 							height="24"
 							viewBox="0 0 24 24"
@@ -269,7 +269,7 @@
 						cssClasses="p-2 mx-2 inline-block"
 						ariaLabel="{'Footer Twitter link'}"
 						><svg
-							class="w-4"
+							
 							width="24"
 							height="24"
 							viewBox="0 0 24 24"
@@ -289,7 +289,7 @@
 						cssClasses="p-2 mx-2 inline-block"
 						ariaLabel="{'Footer Facebook link'}"
 						><svg
-							class="w-4"
+							
 							width="24"
 							height="24"
 							viewBox="0 0 24 24"

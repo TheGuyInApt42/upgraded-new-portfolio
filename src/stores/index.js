@@ -5,7 +5,7 @@ export const isDev = writable(process.env.NODE_ENV === 'development');
 
 export const theme = writable((browser && localStorage.getItem('theme')) || 'light');
 
-const defaultValue = 'light';
+const defaultValue = 'dark';
 
 const initialValue = browser ? window.localStorage.getItem('theme') ?? defaultValue : defaultValue;
 //export const theme = writable<boolean>(false);

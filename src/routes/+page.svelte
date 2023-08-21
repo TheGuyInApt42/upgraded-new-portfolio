@@ -138,7 +138,7 @@
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Small Business',
 		},
-		{
+		/* {
 			title: 'Demo Restaurant',
 			description:
 				'Sample Restaurant Website',
@@ -148,7 +148,7 @@
 				'https://res.cloudinary.com/blackgandalf/image/upload/v1682645863/Screenshot_2023-04-27_at_21-35-15_Good_Food_Home_makxet.png',
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Small Business',
-		},
+		}, */
 	];
 
 	const testimonials = [
