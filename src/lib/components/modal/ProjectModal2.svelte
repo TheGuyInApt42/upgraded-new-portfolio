@@ -20,7 +20,7 @@
 		padding: 16px;
 		background: white;
 		pointer-events: auto;
-		height: 600px;
+		height: 675px;
 		grid-template-columns: 55% auto;
 		grid-template-rows: 97% auto;
 		grid-template-areas:
@@ -43,6 +43,20 @@
 		justify-content: flex-end;
 		flex-direction: row;
 		margin-left: auto;
+		font-size: 1.5rem;
+		width: 1.5rem;
+	}
+
+	@media screen and (max-width: 768px){
+		.contents{
+			grid-template-rows: 50% 45% auto;
+			grid-template-columns: auto;
+			grid-template-areas: 
+			'img'
+			'details'
+			'close';
+			
+		}
 	}
 </style>
 
@@ -65,7 +79,10 @@
 	<div role="dialog" class="modal z-20" transition:fade>
 		<div class="contents lg:w-9/12">
 			<div class="img h-full">
-				<img src="{imgSrc}" alt="" class="h-full" />
+				<a href="{site}" target="_blank">
+					<img src="{imgSrc}" alt="" class="h-full" />
+				</a>
+				
 			</div>
 			<div class="details flex flex-col">
 				<h2 class="md:text-4xl">{title}</h2>
