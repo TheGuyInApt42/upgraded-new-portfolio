@@ -12,6 +12,7 @@
 	import { theme } from '@stores';
 
 	// Components
+	import Headroom from '@components/header/Headroom.svelte';
 	import Header from '@components/header/Header.svelte';
 	import MobileNav from '@components/nav/MobileNav.svelte';
 	import DesktopNav from '@components/nav/DesktopNav.svelte';
@@ -83,6 +84,7 @@
 <div class="bg-white dark:bg-black">
 	<!-- Start: Header Navigation -->
 
+	<Headroom>
 	<Header
 		on:toggleTheme="{(e) => toggleThemeMode(e)}"
 		navLinks="{navLinks}"
@@ -93,6 +95,7 @@
 	/>
 
 	<MobileNav />
+	</Headroom>
 	<!--
     <DesktopNav/>
     -->
