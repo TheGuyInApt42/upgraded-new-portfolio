@@ -1,5 +1,5 @@
 <!--  Services Container -->
-<section id="#services" class="leading-loose relative">
+<section id="#services" class="leading-loose relative lg:top-[120px] top-28">
 	<!-- Headings and text container -->
 	<div class="text-center pt-8 pb-24 px-4 md:pt-12 lg:flex lg:flex-col lg:items-center lg:pb-48">
 		<!-- Heading and description -->

@@ -1,5 +1,5 @@
 <!-- Main landing section -->
-<section class="md:flex md:justify-center md:items-end lg:items-center lg:relative lg:gap-x-24 xl:mx-auto bg-true-blue">
+<section class="md:flex md:justify-center md:items-end lg:items-center relative lg:gap-x-24 xl:mx-auto bg-true-blue lg:top-[120px] top-28">
 	<div>
 		<!-- Text Container-->
 		<div class="px-4 pt-8 xs:pr-1 md:px-8 md:flex-shrink-0 lg:py-24">
