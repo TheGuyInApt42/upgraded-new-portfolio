@@ -16,6 +16,8 @@
 	const form = useForm();
 
 	function handleForm(){
+		const formData = new FormData(e.target);
+		console.log(formData);
 		goto('/success')
 	}
 </script>
@@ -90,7 +92,7 @@
 					<div>
 						<span class="block text-xs text-gray-500"> Email Address </span>
 						<span class="block text-sm font-medium text-gray-800 md:text-base dark:text-white">
-							hello@gorhamwebconsulting.com
+							info@gorhamwebconsulting.com
 						</span>
 					</div>
 				</div>
@@ -147,15 +149,17 @@
 
 					<!-- Form -->
 					<form
-						id="contact"
+						accept-charset="UTF-8"
+						id="form"
 						name="contactForm"
 						data-netlify="true"
 						autocomplete="off"
 						netlify-honeypot="bot-field"
 						method="POST"
 						class="mt-6 md:h-full md:flex md:flex-col md:gap-y-6"
+						action="/form?/sendForm"
 					
-						on:submit|preventDefault={handleForm}
+						
 						use:form
 					>
 						<p class="hidden">
@@ -182,6 +186,8 @@
 								placeholder="Name..."
 							/>
 						</div>
+
+						<input type="hidden" name="_gotcha" style="display:none !important">
 
 						<!-- Email -->
 						<div
