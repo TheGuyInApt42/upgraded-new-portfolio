@@ -160,7 +160,7 @@
 
 <main>
 	<!-- Main landing section -->
-	<section class="px-8 lg:px-0 lg:relative lg:flex lg:justify-center xl:max-w-screen-2xl xl:mx-auto">
+	<section class="px-8 lg:px-0 lg:flex lg:justify-center xl:max-w-screen-2xl xl:mx-auto relative top-28 lg:top-[120px]">
 		<!-- Centered landing section -->
 		<div>
 			<div

@@ -31,6 +31,6 @@
 <!-- End: Header Tag -->
 
 <!-- Contact form section -->
-<section class="bg-gray-100 sm:pt-16 md:py-16 md:pt-20 md:pb-24 md:px-8 lg:px-40 dark:bg-black">
+<section class="bg-gray-100 sm:pt-16 md:py-16 md:pt-20 md:pb-24 md:px-8 lg:px-40 dark:bg-black relative top-28 lg:top-[120px]">
 	<ContactForm />
 </section>

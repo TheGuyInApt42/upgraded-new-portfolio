@@ -25,7 +25,7 @@
 <!-- End: Header Tag -->
 
 <!-- Start: About page section -->
-<div class="flex flex-col md:justify-center items-start max-w-2xl mx-auto md:mb-16 md:p-8 p-8">
+<section class="flex flex-col md:justify-center items-start max-w-2xl mx-auto md:mb-16 md:p-8 p-8 relative top-28 lg:top-[120px]">
 	<h1 class="font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:text-white"> About GWC </h1>
 	<div class="md:mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
 		<p>
@@ -44,5 +44,5 @@
 			me.
 		</p>
 	</div>
-</div>
+</section>
 <!-- End: About page section -->
