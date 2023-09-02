@@ -41,7 +41,7 @@
 </script>
 
 <footer
-	class="relative z-20 flex flex-col items-center justify-between px-4 bg-white lg:bg-gray-100 lg:shadow-inner dark:bg-black pb-8 md:pb-2 max-w-[100vw]"
+	class="relative z-20 flex flex-col items-center justify-between px-4 bg-white lg:bg-gray-100 lg:shadow-inner dark:bg-black pb-8 md:pb-2 max-w-[100vw] top-28 lg:top-[120px]"
 >
 
 	<!-- Nav Links container -->
@@ -115,7 +115,7 @@
 		<div class="flex opacity-75 mt-2 mb-2 justify-center md:justify-end md:gap-x-2 md:mt-0 md:mb-0">
 			<!-- Mail Icon -->
 			<ExternalLink
-				href="mailto:ralphjgorham@gmail.com"
+				href="mailto:info@gorhamwebconsulting.com"
 				cssClasses="p-2 pl-0 inline-block md:pb-0"
 				ariaLabel="{'Footer Email link'}"
 				><svg

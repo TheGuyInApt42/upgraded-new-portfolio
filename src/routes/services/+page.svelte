@@ -320,7 +320,7 @@
 	</section>
 
 	<!-- Services Container -->
-	<section class="px-1 md:px-2 lg:px-4">
+	<section class="px-1 md:px-2 lg:px-4 relative top-28 lg:top-[120px]">
 		{#each services as service}
 			<Saos animation="{'swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both'}">
 				<ServiceBlock service="{service}" />
