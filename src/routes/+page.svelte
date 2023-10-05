@@ -97,7 +97,8 @@
 		{
 			title: 'Ralph J Gorham',
 			description:
-				'Sveltekit starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable web application.',
+			`This was my second personal portfolio page. 
+			It includes list of projects worked as well as a personal blog.`,
 			tools: 'Svelte/ Strapi CMS',
 			url: 'https://ralphjgorham.com',
 			imageSrc:
@@ -108,7 +109,7 @@
 		{
 			title: 'Droplet Fuel',
 			description:
-				'Sveltekit Blog starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable web application and blog.',
+				`This was a contract for a startup that sold a smart oil gauge.`,
 			tools: 'HTML / CSS / jQuery/ PHP/ MySQL',
 			url: 'https://www.dropletfuel.com',
 			imageSrc:
@@ -117,24 +118,37 @@
 			type: 'Small Business',
 		},
 
-		{
+		/* {
 			title: 'Touro University Nevada Homepage',
 			description:
-				'Sveltekit Blog starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable web application and blog.',
+				`I `,
 			tools: 'HTML / CSS / JavaScript / PHP/ CMS',
 			url: 'https://tun.touro.edu',
 			imageSrc: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/tun_hr2awx.png',
 			work: 'Web Development',
 			type: 'Education',
-		},
+		}, */
 		{
 			title: 'White Rock Center',
 			description:
-				'Sveltekit Blog starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable web application and blog.',
+				`I designed and developed this website for an event hall in North Carolina.`,
 			tools: 'Svelte / Express',
 			url: 'https://whiterocknc.com',
 			imageSrc:
 				'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.png',
+			work: 'Web Design + Web Development + Hosting',
+			type: 'Small Business',
+		},
+		{
+			title: 'RHINOStreet',
+			description:
+				`I designed and developed this site for a startup that is looking to 
+				revolutionize marketing. It is a local search engine that allows an 
+				user to search for businesses within 20 miles of location.`,
+			tools: 'Sveltekit, Tailwind',
+			url: 'https://rhinostreet.com',
+			imageSrc:
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.jpg',
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Small Business',
 		},
