@@ -290,6 +290,6 @@
 
 <!-- needed to render modals -->
 <Modals>
-	<div slot="backdrop" class="backdrop" transition:fade on:click="{closeModal}"> </div>
+	<div slot="backdrop" class="backdrop" transition:fade|global on:click="{closeModal}"> </div>
 </Modals>
 <!-- End: Home Page container -->

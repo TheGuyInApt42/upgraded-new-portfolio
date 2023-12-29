@@ -76,7 +76,7 @@
 </script>
 
 {#if isOpen}
-	<div role="dialog" class="modal z-20" transition:fade>
+	<div role="dialog" class="modal z-20" transition:fade|global>
 		<div class="contents lg:w-9/12">
 			<div class="img h-full">
 				<a href="{site}" target="_blank">

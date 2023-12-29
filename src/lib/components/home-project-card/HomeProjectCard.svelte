@@ -86,7 +86,7 @@
 	}
 </script>
 
-<article in:scale out:fade>
+<article in:scale|global out:fade|global>
 	<!-- Project Image -->
 	<div class="card">
 		<img class="card__image" src="{img}" alt="Example page from {heading}" />
