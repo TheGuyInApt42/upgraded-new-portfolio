@@ -12,7 +12,14 @@
 	<meta data-key="description" name="description" content={siteDescription}>
 </svelte:head>
 
-<h1>Blog</h1>
+<div class="flex justify-between mb-12">
+	<h1> Blog </h1>
+
+	<a href="/blog/category/" class="dark:text-white font-semibold">Keywords</a>
+</div>
+
+
+
 
 <PostsList posts={data.posts} />
 

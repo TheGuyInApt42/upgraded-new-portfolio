@@ -23,44 +23,58 @@
 	import Analytics from '@components/analytics/Analytics.svelte';
 	import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
 
-
 	// End: Local Imports
 
 	// Start: Local component properties
 	export let path = '';
 
-
 	const navLinks = [
 		{
 			path: '/',
-			label: 'Home',
+			label: 'Home'
 		},
 		{
 			path: '/about',
-			label: 'About',
+			label: 'About'
 		},
 		{
 			path: '/#projects',
-			label: 'Projects',
+			label: 'Projects'
 		},
 
 		{
 			path: '/services',
-			label: 'Services',
+			label: 'Services'
 		},
 		{
 			path: '/contact',
-			label: 'Contact',
+			label: 'Contact'
 		},
+		{
+			path: '/blog',
+			label: 'Blog'
+		}
 	];
 
 	const stylesList = [
 		{
-			url: '/tailwind.css',
-		},
+			url: '/tailwind.css'
+		}
 	];
 	// End: Local component properties
 	onMount(async () => {
+		window.omnisend = window.omnisend || [];
+		omnisend.push(['accountID', '66d8a57470a6fa1b67972ac9']);
+		omnisend.push(['track', '$pageViewed']);
+		!(function () {
+			var e = document.createElement('script');
+			(e.type = 'text/javascript'),
+				(e.async = !0),
+				(e.src = 'https://omnisnippet1.com/inshop/launcher-v2.js');
+			var t = document.getElementsByTagName('script')[0];
+			t.parentNode.insertBefore(e, t);
+		})();
+
 		let html = document.getElementsByTagName('html').item(0);
 		html.className = $theme;
 	});
@@ -75,26 +89,26 @@
 	// End: Local component methods
 </script>
 
-<GoogleAnalytics properties="{['G-VRMPNCPJGE', 'G-D0X54E5THK']}" />
+<GoogleAnalytics properties={['G-VRMPNCPJGE', 'G-D0X54E5THK']} />
 
 <!-- <Analytics /> -->
 
-<CompiledStyles cssFiles="{stylesList}" />
+<CompiledStyles cssFiles={stylesList} />
 
 <div class="bg-white dark:bg-black">
 	<!-- Start: Header Navigation -->
 
 	<Headroom>
-	<Header
-		on:toggleTheme="{(e) => toggleThemeMode(e)}"
-		navLinks="{navLinks}"
-		logoImage="{'https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.png'}"
-		title="{''}"
-		useThemeModeButton={false}
-		useTitleAndLogo="{true}"
-	/>
+		<Header
+			on:toggleTheme={(e) => toggleThemeMode(e)}
+			{navLinks}
+			logoImage={'https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.png'}
+			title={''}
+			useThemeModeButton={false}
+			useTitleAndLogo={true}
+		/>
 
-	<MobileNav />
+		<MobileNav />
 	</Headroom>
 	<!--
     <DesktopNav/>
@@ -103,19 +117,19 @@
 	<!-- End: Header Navigation -->
 	<main id="skip" class="flex flex-col md:justify-center bg-white dark:bg-black md:p-0">
 		<!-- Start: Defaull layout slot -->
-		<RouteTransition referesh="{path}">
+		<RouteTransition referesh={path}>
 			<slot />
 		</RouteTransition>
 		<!-- End: Defaull layout slot -->
 		<!-- Start: Footer -->
-		
+
 		<!-- End: Footer -->
 	</main>
 	<FtmFooter />
 </div>
 
 <style>
-	main{
+	main {
 		max-width: 100vw;
 	}
 </style>

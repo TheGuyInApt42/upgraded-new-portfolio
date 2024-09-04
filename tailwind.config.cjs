@@ -3,7 +3,7 @@ const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts, md}'],
   darkMode: 'class',
   theme: {
     extend: {
