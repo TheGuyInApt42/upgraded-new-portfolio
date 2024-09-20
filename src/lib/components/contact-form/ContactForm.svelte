@@ -1,24 +1,25 @@
-<style>
-	.error {
-		color: red;
-		margin-left: 14px;
-		font-size: 12px;
-	}
-</style>
-
 <script context="module">
 	export const prerender = true;
 </script>
 
 <script>
-	import { useForm, Hint, HintGroup, validators, required, email, url, minLength } from 'svelte-use-form';
+	import {
+		useForm,
+		Hint,
+		HintGroup,
+		validators,
+		required,
+		email,
+		url,
+		minLength
+	} from 'svelte-use-form';
 	import { goto } from '$app/navigation';
 	const form = useForm();
 
-	function handleForm(){
+	function handleForm() {
 		const formData = new FormData(e.target);
 		console.log(formData);
-		goto('/success')
+		goto('/success');
 	}
 </script>
 
@@ -60,7 +61,8 @@
 										width="17.0667"
 										height="17.0667"
 										fill="white"
-										transform="translate(0.466797 0.466667)"></rect>
+										transform="translate(0.466797 0.466667)"
+									></rect>
 								</clipPath>
 							</defs>
 						</svg>
@@ -68,7 +70,7 @@
 					<div>
 						<span class="block text-xs text-gray-500"> Telephone Number </span>
 						<span class="block text-sm font-medium text-gray-800 md:text-base dark:text-white">
-							(914) 419 4033
+							(914) 361-9844
 						</span>
 					</div>
 				</div>
@@ -119,7 +121,8 @@
 										width="17.0667"
 										height="17.0667"
 										fill="white"
-										transform="translate(0.533203 0.466667)"></rect>
+										transform="translate(0.533203 0.466667)"
+									></rect>
 								</clipPath>
 							</defs>
 						</svg>
@@ -158,8 +161,6 @@
 						method="POST"
 						class="mt-6 md:h-full md:flex md:flex-col md:gap-y-6"
 						action="/form?/sendForm"
-					
-						
 						use:form
 					>
 						<p class="hidden">
@@ -187,7 +188,7 @@
 							/>
 						</div>
 
-						<input type="hidden" name="_gotcha" style="display:none !important">
+						<input type="hidden" name="_gotcha" style="display:none !important" />
 
 						<!-- Email -->
 						<div
@@ -200,7 +201,7 @@
 								name="email"
 								required
 								placeholder="Email..."
-								use:validators="{[required, email]}"
+								use:validators={[required, email]}
 							/>
 						</div>
 						<div class="error">
@@ -220,7 +221,7 @@
 								id="website"
 								name="website"
 								placeholder="Website..."
-								use:validators="{[url]}"
+								use:validators={[url]}
 							/>
 						</div>
 						<div class="error">
@@ -267,7 +268,8 @@
 								rows="3"
 								minLength="10"
 								maxLength="100"
-								required></textarea>
+								required
+							></textarea>
 						</div>
 
 						<!-- Submit form -->
@@ -285,3 +287,11 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.error {
+		color: red;
+		margin-left: 14px;
+		font-size: 12px;
+	}
+</style>
