@@ -49,11 +49,11 @@
 		{
 			path: '/contact',
 			label: 'Contact'
-		},
-		{
+		}
+		/* {
 			path: '/blog',
 			label: 'Blog'
-		}
+		} */
 	];
 
 	const stylesList = [
