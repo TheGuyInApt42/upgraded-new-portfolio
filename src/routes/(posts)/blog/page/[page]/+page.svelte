@@ -1,7 +1,7 @@
 <!-- This file handles any /blog/page/x route for pagination -->
 <script>
 	import PostsList from '@components/posts-list/PostsList.svelte';
-	import Pagination from '@components/Pagination.svelte';
+	import Pagination from '@components/pagination/Pagination.svelte';
 	import { postsPerPage, siteDescription } from '$lib/config';
 
 	export let data;

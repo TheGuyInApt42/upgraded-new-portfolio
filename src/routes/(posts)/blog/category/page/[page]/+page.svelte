@@ -1,7 +1,7 @@
 <!-- Renders posts listed by category -->
 <script>
 	import PostsList from '@components/posts-list/PostsList.svelte';
-	import Pagination from '@components/Pagination.svelte';
+	import Pagination from '@components/pagination/Pagination.svelte';
 	import { siteDescription } from '$lib/config';
 
 	export let data;
