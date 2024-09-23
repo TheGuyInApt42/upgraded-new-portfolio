@@ -1,7 +1,8 @@
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import adapter from '@sveltejs/adapter-auto';
+//import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-netlify';
 import { mdsvex } from 'mdsvex';
-import preprocess from "svelte-preprocess";
+import preprocess from 'svelte-preprocess';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 
@@ -12,7 +13,7 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		alias:{
+		alias: {
 			'@components': './src/lib/components',
 			'@stores': './src/stores'
 		},
@@ -31,8 +32,8 @@ const config = {
 	},
 	preprocess: [
 		preprocess({
-		  postcss: true,
-		  scss: {
+			postcss: true,
+			scss: {
 				// Ensures Sass variables are always available inside component <style> blocks as vars.$variableDefinedInFile
 				prependData: `@use 'src/lib/assets/scss/vars';`
 			}
@@ -46,7 +47,7 @@ const config = {
 			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 		}),
 		vitePreprocess({})
-	  ]
+	]
 };
 
 export default config;
