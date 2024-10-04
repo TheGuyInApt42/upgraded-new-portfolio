@@ -1,6 +1,5 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-//import adapter from '@sveltejs/adapter-auto';
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
