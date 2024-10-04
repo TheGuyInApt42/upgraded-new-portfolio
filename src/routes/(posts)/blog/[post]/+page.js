@@ -10,6 +10,6 @@ export const load = async ({ params }) => {
 			meta: { ...post.metadata, slug: params.post } 
 		}
 	} catch(err) {
-		throw error(404, err)
+		error(404, err);
 	}
 }
