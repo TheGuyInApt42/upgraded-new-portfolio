@@ -37,11 +37,12 @@
 <div class="md:container md:mx-auto">
 	<div class="flex flex-col justify-center items-center">
 		<!-- Start: Error Status Code -->
-		<h1>
-			{$page.status}
-		</h1>
-		<!-- End: Error Status Code -->
 		{#if error}
+			<h1>
+				{error.status}
+			</h1>
+			<!-- End: Error Status Code -->
+
 			<p>
 				{error.name}
 			</p>
@@ -53,6 +54,7 @@
 		<!-- End: Error Message container -->
 	</div>
 </div>
+
 <!-- End: Error View Layout -->
 
 <style>
