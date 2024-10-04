@@ -1,16 +1,3 @@
-<style>
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
-
 <script>
 	// Start: Svelte Imports
 	import { dev } from '$app/environment';
@@ -22,7 +9,6 @@
 	//  Components
 	import HeadTags from '@components/head-tags/HeadTags.svelte';
 
-	
 	// End: Local Imports
 
 	// Start: Exported Properties
@@ -37,15 +23,14 @@
 	export let error;
 	// End: Exported Properties
 
-
 	const metaData = {
 		title: `${status} | Sveltekit`,
-		description: '404 page of Sveltekit starter project',
+		description: '404 page of Sveltekit starter project'
 	};
 </script>
 
 <!-- Start: Header Tage -->
-<HeadTags metaData="{metaData}" />
+<HeadTags {metaData} />
 <!-- End: Header Tage -->
 
 <!-- Start: Error View Layout -->
@@ -56,14 +41,29 @@
 			{$page.status}
 		</h1>
 		<!-- End: Error Status Code -->
-		<p>
-			{error.name}
-		</p>
-		<!-- Start: Error Message container -->
-		{#if dev && error.stack}
-			<pre> {$page.error.message} </pre>
+		{#if error}
+			<p>
+				{error.name}
+			</p>
+			<!-- Start: Error Message container -->
+			{#if dev && error.stack}
+				<pre> {$page.error.message} </pre>
+			{/if}
 		{/if}
 		<!-- End: Error Message container -->
 	</div>
 </div>
 <!-- End: Error View Layout -->
+
+<style>
+	h1 {
+		font-size: 2.8em;
+		font-weight: 700;
+		margin: 0 0 0.5em 0;
+	}
+	@media (min-width: 480px) {
+		h1 {
+			font-size: 4em;
+		}
+	}
+</style>
