@@ -38,7 +38,21 @@ const config = {
 				'/blog/category/page/*',
 				'/blog/page/',
 				'/blog/page/*'
-			]
+			],
+			handleHttpError: ({ path, error }) => {
+				// Include the error object
+				if (error.status === 404) {
+					if (path === '/not-found' && referrer === '/blog/how-we-built-our-404-page') {
+						return; // Ignore the 404 for this specific case
+					} else if (path.startsWith('/blog/category/page/')) {
+						console.warn(`Ignoring 404 for ${path} during prerendering`);
+						return { status: 200 }; // Suppress the 404 error for these paths
+					}
+				}
+
+				// For other errors, or if the path doesn't match the conditions above, re-throw the error
+				throw new Error(error.message);
+			}
 		}
 	},
 	preprocess: [
