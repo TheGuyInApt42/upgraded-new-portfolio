@@ -1,0 +1,8 @@
+name = "gwc-website"  # Name of your project
+
+
+[env]                          # Default environment variables
+
+
+[env.production]               # Production-specific environment variables
+DATABASE_URL = "your_production_database_url"
