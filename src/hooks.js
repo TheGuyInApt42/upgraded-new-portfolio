@@ -20,3 +20,13 @@ export const handle = async ({ event, resolve }) => {
 
 	return response;
 };
+
+export const handleHttpError = async ({ error }) => {
+	console.error(error);
+	return {
+		status: 404,
+		body: {
+			message: 'The requested resource was not found.'
+		}
+	};
+};
