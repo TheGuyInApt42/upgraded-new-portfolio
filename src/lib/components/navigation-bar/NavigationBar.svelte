@@ -1,21 +1,10 @@
-<style>
-	img {
-		width: 200px;
-		height: 200px;
-	}
-
-	:global(.light nav) {
-		background: white;
-	}
-</style>
-
 <script>
 	// Svelte Imports
 	import { createEventDispatcher } from 'svelte';
 	import { onMount } from 'svelte';
 
 	// Exports
-	
+
 	export let navLinks;
 	export let logoImage = '';
 	export let title = '';
@@ -38,7 +27,7 @@
 		$theme = dark ? 'dark' : 'light';
 		console.log($theme);
 		dispatch('toggleTheme', {
-			dark: dark,
+			dark: dark
 		});
 	};
 
@@ -58,15 +47,14 @@
 	});
 </script>
 
-
 {#if useThemeModeButton}
 	<button
-		on:click="{() => toggleTheme()}"
+		on:click={() => toggleTheme()}
 		aria-label="Toggle Dark Mode"
 		type="button"
-		class="{useTitleAndLogo
+		class={useTitleAndLogo
 			? 'sticky-theme-mode-button md:w-10 md:h-10 md:p-3 bg-gray-200 rounded-full dark:bg-gray-800 w-6 h-6 p-1'
-			: 'md:w-10 md:h-10 md:p-3 bg-gray-200 rounded-full dark:bg-gray-800 w-6 h-6 p-1'}"
+			: 'md:w-10 md:h-10 md:p-3 bg-gray-200 rounded-full dark:bg-gray-800 w-6 h-6 p-1'}
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -79,15 +67,16 @@
 				<path
 					stroke-linecap="round"
 					stroke-linejoin="round"
-					stroke-width="{2}"
+					stroke-width={2}
 					d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
 				></path>
 			{:else}
 				<path
 					stroke-linecap="round"
 					stroke-linejoin="round"
-					stroke-width="{2}"
-					d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+					stroke-width={2}
+					d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+				></path>
 			{/if}
 		</svg>
 	</button>
@@ -104,10 +93,10 @@
 						sveltekit:prefetch
 						href="/"
 						class="flex flex-row h-12 justify-center items-center"
-						aria-label="{title}"
+						aria-label={title}
 					>
 						<img
-							src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logoblack_c9ft73.png"
+							src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logoblack_c9ft73.webp"
 							alt="Logo"
 							class="mr-2"
 						/>
@@ -118,9 +107,9 @@
 						sveltekit:prefetch
 						href="/"
 						class="flex flex-row h-12 justify-center items-center"
-						aria-label="{title}"
+						aria-label={title}
 					>
-						<img src="{logoImage}" alt="{title}" class="mr-2" />
+						<img src={logoImage} alt={title} class="mr-2" />
 						{title}
 					</a>
 				{/if}
@@ -128,10 +117,25 @@
 		{/if}
 		<div class="flex flex-row items-center">
 			{#each navLinks as navLink, index (navLink.path)}
-				<a data-sveltekit-preload-data="hover" href="{navLink.path}" class="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+				<a
+					data-sveltekit-preload-data="hover"
+					href={navLink.path}
+					class="p-1 text-gray-900 sm:p-4 dark:text-gray-100"
+				>
 					{navLink.label}
 				</a>
 			{/each}
 		</div>
 	</nav>
 {/if}
+
+<style>
+	img {
+		width: 200px;
+		height: 200px;
+	}
+
+	:global(.light nav) {
+		background: white;
+	}
+</style>

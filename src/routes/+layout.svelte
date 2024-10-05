@@ -102,7 +102,7 @@
 		<Header
 			on:toggleTheme={(e) => toggleThemeMode(e)}
 			{navLinks}
-			logoImage={'https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.png'}
+			logoImage={'https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.webp'}
 			title={''}
 			useThemeModeButton={false}
 			useTitleAndLogo={true}
