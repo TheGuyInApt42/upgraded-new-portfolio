@@ -1,17 +1,90 @@
 import fetchPosts from '$lib/assets/js/fetchPosts';
+import { postsPerPage } from '$lib/config';
+import { browser } from '$app/environment';
 
-export const load = async ({ params }) => {
-	const category = params.category;
-	const page = params.page || 1;
-	const options = { category, limit: -1 };
-	const { posts } = await fetchPosts(options);
+const getCacheKey = (category, page) => `posts-${category}-page-${page}`;
+const cacheDuration = 1000 * 60 * 5; // 5 minutes
 
-	return {
-		posts,
-		category,
-		page,
-		total: posts.length
-	};
+export const load = async ({ fetch, params, url }) => {
+	const { category } = params;
+	const page = parseInt(url.searchParams.get('page') || '1');
+	const offset = page * postsPerPage - postsPerPage;
+	const cacheKey = getCacheKey(category, page);
+
+	console.log('Loading category:', category, 'page:', page, 'offset:', offset);
+
+	let cachedData;
+
+	// Check if running in the browser
+	if (browser) {
+		cachedData = localStorage.getItem(cacheKey);
+	}
+
+	if (cachedData) {
+		const cacheData = JSON.parse(cachedData);
+
+		if (cacheData && Date.now() - cacheData.timestamp < cacheDuration) {
+			console.log(`Serving cached posts for category: ${category}`);
+			return cacheData;
+		}
+	}
+
+	try {
+		// Logging API endpoints
+		console.log(`Fetching count from: /api/posts/category/${category}/count`);
+		console.log('Fetching posts with:', { category, offset, page });
+
+		const [totalPostsRes, postsData] = await Promise.all([
+			fetch(`/api/posts/category/${category}/count`),
+			fetchPosts({ category, offset, limit: postsPerPage })
+		]);
+
+		// Log the responses
+		const total = await totalPostsRes.json();
+		console.log('Total posts response:', total);
+		console.log('Posts data:', postsData);
+
+		// Validate total
+		if (typeof total !== 'number') {
+			console.error('Total posts count is not a number:', total);
+			throw new Error('Invalid total posts count');
+		}
+
+		if (!postsData?.posts) {
+			console.error('Invalid posts data returned:', postsData);
+			throw new Error('Invalid posts data structure');
+		}
+
+		const { posts } = postsData;
+
+		if (!Array.isArray(posts)) {
+			console.error('Expected posts to be an array but got:', posts);
+			throw new Error('Expected posts to be an array');
+		}
+
+		const result = {
+			posts: postsData.posts,
+			page,
+			category,
+			totalPosts: total,
+			timestamp: Date.now() // Add timestamp for cache expiry
+		};
+
+		// Cache the result in local storage
+		if (browser) {
+			localStorage.setItem(cacheKey, JSON.stringify(result));
+		}
+		return result;
+	} catch (error) {
+		console.error('Error loading posts for category:', category, error);
+		return {
+			posts: [],
+			page,
+			category,
+			totalPosts: 0,
+			error: error instanceof Error ? error.message : 'Unknown error occurred'
+		};
+	}
 };
 
 /* from other page.server.js that gemini suggested

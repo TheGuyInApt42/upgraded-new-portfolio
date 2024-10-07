@@ -1,18 +1,27 @@
 <script>
-	import { postsPerPage } from '$lib/config'
+	import { postsPerPage } from '$lib/config';
 
-	export let currentPage
-	export let totalPosts
-	export let path = '/blog/page'
-	
-	let pagesAvailable
-	$: pagesAvailable = Math.ceil(totalPosts / postsPerPage)
+	export let currentPage;
+	export let totalPosts;
+	export let baseUrl;
+	export let urlParam = 'page';
+	//export let path = '/blog/page'
 
-	const isCurrentPage = (page) => page == currentPage
+	$: totalPages = Math.ceil(totalPosts / postsPerPage);
+
+	function getPageUrl(pageNum) {
+		if (pageNum <= 1) return baseUrl;
+		return `${baseUrl}?${urlParam}=${pageNum}`;
+	}
+
+	let pagesAvailable;
+	$: pagesAvailable = Math.ceil(totalPosts / postsPerPage);
+
+	const isCurrentPage = (page) => page == currentPage;
 </script>
 
 <!-- For some reason, the pagination wasn't re-rendering properly during navigation without the #key block -->
-{#key currentPage}
+<!-- {#key currentPage}
 	{#if pagesAvailable > 1}
 		<nav aria-label="Pagination navigation" class="pagination">
 			<ul>
@@ -33,4 +42,16 @@
 			</ul>
 		</nav>
 	{/if}
-{/key}
+{/key} -->
+
+<nav>
+	{#if currentPage > 1}
+		<a href={getPageUrl(currentPage - 1)}>Previous</a>
+	{/if}
+
+	<span>Page {currentPage} of {totalPages}</span>
+
+	{#if currentPage < totalPages}
+		<a href={getPageUrl(currentPage + 1)}>Next</a>
+	{/if}
+</nav>
