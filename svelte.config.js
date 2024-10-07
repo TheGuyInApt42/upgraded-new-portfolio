@@ -29,7 +29,7 @@ const config = {
 			'@stores': './src/stores'
 		},
 		prerender: {
-			entries: ['*', '/api/posts/page/*', '/blog/category/*/page/', '/blog/page/', '/blog/page/*'],
+			entries: ['*', '/api/posts/page/*', '/blog/category/*', '/blog/page/'],
 			handleHttpError: ({ path, referrer, message }) => {
 				// ignore prerendering errors
 				if (path.includes('/blog/category/')) {
