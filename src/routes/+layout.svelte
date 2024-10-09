@@ -19,8 +19,6 @@
 	import FtmFooter from '@components/footer/FTMFooter.svelte';
 	import Footer from '@components/footer/Footer.svelte';
 	import RouteTransition from '@components/route-transition/RouteTransition.svelte';
-	import CompiledStyles from '@components/compiled-styles/CompiledStyles.svelte';
-	import Analytics from '@components/analytics/Analytics.svelte';
 	import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
 
 	// End: Local Imports
@@ -56,25 +54,8 @@
 		} */
 	];
 
-	const stylesList = [
-		{
-			url: '/tailwind.css'
-		}
-	];
 	// End: Local component properties
 	onMount(async () => {
-		window.omnisend = window.omnisend || [];
-		omnisend.push(['accountID', '66d8a57470a6fa1b67972ac9']);
-		omnisend.push(['track', '$pageViewed']);
-		!(function () {
-			var e = document.createElement('script');
-			(e.type = 'text/javascript'),
-				(e.async = !0),
-				(e.src = 'https://omnisnippet1.com/inshop/launcher-v2.js');
-			var t = document.getElementsByTagName('script')[0];
-			t.parentNode.insertBefore(e, t);
-		})();
-
 		let html = document.getElementsByTagName('html').item(0);
 		html.className = $theme;
 	});
@@ -91,11 +72,7 @@
 
 <GoogleAnalytics properties={['G-VRMPNCPJGE', 'G-D0X54E5THK']} />
 
-<!-- <Analytics /> -->
-
-<CompiledStyles cssFiles={stylesList} />
-
-<div class="bg-white dark:bg-black">
+<div class="bg-white dark:bg-black flex flex-col">
 	<!-- Start: Header Navigation -->
 
 	<Headroom>
@@ -107,9 +84,10 @@
 			useThemeModeButton={false}
 			useTitleAndLogo={true}
 		/>
-
-		<MobileNav />
 	</Headroom>
+
+	<MobileNav />
+
 	<!--
     <DesktopNav/>
     -->
