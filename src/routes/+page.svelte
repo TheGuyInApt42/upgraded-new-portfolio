@@ -50,8 +50,12 @@
 			It includes list of projects worked as well as a personal blog.`,
 			tools: 'Svelte/ Strapi CMS',
 			url: 'https://ralphjgorham.com',
-			imageSrc:
-				'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
+			img: {
+				default:
+					'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
+				webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
+				jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.jpg'
+			},
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Personal'
 		},
@@ -60,8 +64,12 @@
 			description: `This was a contract for a startup that sold a smart oil gauge.`,
 			tools: 'HTML / CSS / jQuery/ PHP/ MySQL',
 			url: 'https://www.dropletfuel.com',
-			imageSrc:
-				'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/dropletfuel.com_wnpg5n.webp',
+			img: {
+				default:
+					'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/dropletfuel.com_wnpg5n.webp',
+				webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/dropletfuel.com_wnpg5n.webp',
+				jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/dropletfuel.com_wnpg5n.jpg'
+			},
 			work: 'Web Development',
 			type: 'Small Business'
 		},
@@ -81,8 +89,12 @@
 			description: `I designed and developed this website for an event hall in North Carolina.`,
 			tools: 'Svelte / Express',
 			url: 'https://whiterocknc.com',
-			imageSrc:
-				'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.webp',
+			img: {
+				default:
+					'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.webp',
+				webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.webp',
+				jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.jpg'
+			},
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Small Business'
 		},
@@ -93,8 +105,12 @@
 				user to search for businesses within 20 miles of location.`,
 			tools: 'Sveltekit, Tailwind',
 			url: 'https://rhinostreet.com',
-			imageSrc:
-				'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/GWC/projects/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.webp',
+			img: {
+				default:
+					'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/GWC/projects/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.webp',
+				webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/GWC/projects/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.webp',
+				jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/GWC/projects/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.jpg'
+			},
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Small Business'
 		}
@@ -215,7 +231,7 @@
 								tools={project.tools}
 								text={project.description}
 								url={project.url}
-								img={project.imageSrc}
+								img={project.img}
 								skills={project.work}
 								type={project.type}
 							/>

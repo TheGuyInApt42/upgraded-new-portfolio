@@ -1,10 +1,55 @@
-<style>
-	section {
-		display: grid;
-		grid-template-columns: repeat(3, 33.33%);
-		gap: 25px;
-	}
+<script>
+	import { openModal } from 'svelte-modals';
+	import { fade, scale } from 'svelte/transition';
+	import ProjectModal2 from '../modal/ProjectModal2.svelte';
 
+	export let heading;
+	export let tools;
+	export let text;
+	export let url;
+	export let img;
+	export let skills;
+	export let type;
+
+	function handleClick() {
+		openModal(ProjectModal2, {
+			title: heading,
+			message: text,
+			site: url,
+			imgSrc: img,
+			work: skills,
+			tech: tools
+		});
+	}
+</script>
+
+<article in:scale|global out:fade|global>
+	<!-- Project Image -->
+	<div class="card">
+		<picture>
+			<source srcset={`${img.webp}`} type="image/webp" />
+			<source srcset={`${img.jpg}`} type="image/jpeg" />
+			<img
+				class="card__image"
+				src={`${img.default}`}
+				alt="Example page from {heading}"
+				width="390"
+				height="300"
+				loading="lazy"
+			/>
+		</picture>
+		<!-- Project Overlay -->
+		<div class="card__overlay">
+			<div class="overlay__text">
+				<h3>{heading}</h3>
+				<p class="p-2 text-true-blue">{type}</p>
+				<button class="px-4 bg-true-blue py-2" on:click={handleClick}>Learn More</button>
+			</div>
+		</div>
+	</div>
+</article>
+
+<style>
 	article {
 		width: 390px;
 		height: 300px;
@@ -67,36 +112,3 @@
 		}
 	}
 </style>
-
-<script>
-	import { openModal } from 'svelte-modals';
-	import { fade, scale } from 'svelte/transition';
-	import ProjectModal2 from '../modal/ProjectModal2.svelte';
-
-	export let heading;
-	export let tools;
-	export let text;
-	export let url;
-	export let img;
-	export let skills;
-	export let type;
-
-	function handleClick() {
-		openModal(ProjectModal2, { title: heading, message: text, site: url, imgSrc: img, work: skills, tech: tools });
-	}
-</script>
-
-<article in:scale|global out:fade|global>
-	<!-- Project Image -->
-	<div class="card">
-		<img class="card__image" src="{img}" alt="Example page from {heading}" />
-		<!-- Project Overlay -->
-		<div class="card__overlay">
-			<div class="overlay__text">
-				<h3>{heading}</h3>
-				<p class="p-2 text-true-blue">{type}</p>
-				<button class="px-4 bg-true-blue py-2" on:click="{handleClick}">Learn More</button>
-			</div>
-		</div>
-	</div>
-</article>

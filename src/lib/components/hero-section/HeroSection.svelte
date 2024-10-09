@@ -37,6 +37,7 @@
 					class="w-64 lg:w-96"
 					src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855416/GWC/me4_suwmyd.webp"
 					alt="Ecstatic hero client"
+					loading="lazy"
 				/>
 			</div>
 		</div>
