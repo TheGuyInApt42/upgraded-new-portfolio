@@ -111,6 +111,34 @@
 				</li>
 				<div class="absolute bottom-0 h-1 w-full bg-accent hidden md:absolute lg:hidden"></div>
 			</div>
+
+			<!-- Menu Item -->
+			<div class="inline-block relative footer-link">
+				<li
+					class="relative z-10 text-lg md:text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
+				>
+					<ExternalLink
+						href="https://www.termsfeed.com/live/f671058b-0bd0-4d8d-a89f-da810d4ee3a2"
+						cssClasses="inline-block h-full w-full dark:text-white"
+						ariaLabel={'Footer Blog link'}>Terms</ExternalLink
+					>
+				</li>
+				<div class="absolute bottom-0 h-1 w-full bg-accent hidden md:absolute lg:hidden"></div>
+			</div>
+
+			<!-- Menu Item -->
+			<div class="inline-block relative footer-link">
+				<li
+					class="relative z-10 text-lg md:text-sm font-medium lg:text-base lg:font-normal lg:hover:underline"
+				>
+					<ExternalLink
+						href="https://www.termsfeed.com/live/c626351a-614f-4a4a-b140-63d84673965b"
+						cssClasses="inline-block h-full w-full dark:text-white"
+						ariaLabel={'Footer Blog link'}>Privacy Policy</ExternalLink
+					>
+				</li>
+				<div class="absolute bottom-0 h-1 w-full bg-accent hidden md:absolute lg:hidden"></div>
+			</div>
 		</div>
 
 		<!-- Social Links -->
@@ -202,7 +230,7 @@
 
 	<!-- Disclaimers -->
 	<div class="flex flex-col items-center opacity-50 md:mb-2 lg:mb-6 dark:text-white">
-		<div class="font-medium mb-1">&copy GWC 2023</div>
+		<div class="font-medium mb-1">&copy GWC 2025</div>
 	</div>
 
 	<!-- Copyright + Privacy Policy -->
