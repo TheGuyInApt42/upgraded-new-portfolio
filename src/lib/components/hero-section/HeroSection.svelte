@@ -1,6 +1,6 @@
 <!-- Main landing section -->
 <section
-	class="md:flex md:justify-center md:items-end lg:items-center relative lg:gap-x-24 xl:mx-auto bg-true-blue lg:top-[120px] top-28"
+	class="md:flex md:justify-center md:items-end lg:items-center relative lg:gap-x-24 xl:mx-auto bg-true-blue lg:top-[120px] md:top-28"
 >
 	<div>
 		<!-- Text Container-->
