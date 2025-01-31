@@ -47,11 +47,11 @@
 		{
 			path: '/contact',
 			label: 'Contact'
-		}
-		/* {
+		},
+		{
 			path: '/blog',
 			label: 'Blog'
-		} */
+		}
 	];
 
 	// End: Local component properties

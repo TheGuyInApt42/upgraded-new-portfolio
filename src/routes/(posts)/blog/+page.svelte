@@ -5,10 +5,6 @@
 
 	export let data;
 
-	// Start: Local component properties
-	/**
-	 * @type {IMetaTagProperties}
-	 */
 	const metaData = {
 		title: 'Blog | GWC',
 		description:
@@ -17,21 +13,26 @@
 		keywords: ['blog', 'gorham web consulting blog'],
 		searchUrl: '/blog'
 	};
-	// End: Local component properties
 </script>
 
-<!-- Start: Header Tag -->
 <HeadTags {metaData} />
-<!-- End: Header Tag -->
 
-<section
-	class="flex flex-col md:justify-center items-start max-w-2xl mx-auto md:mb-16 md:p-8 p-8 relative top-28 lg:top-[120px] justify-between mb-12"
->
-	<h1 class="font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:text-white">Blog</h1>
-	<a href="/blog/category/" class="dark:text-white font-semibold text-true-blue" id="keywords"
-		>Keywords</a
-	>
-	<PostsList posts={data.posts} />
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative top-28 lg:top-[120px]">
+		<div class="max-w-4xl mx-auto">
+			<header class="flex justify-between items-center mb-8">
+				<h1 class="font-bold text-3xl md:text-5xl tracking-tight dark:text-white">Blog</h1>
+				<a
+					href="/blog/category/"
+					class="dark:text-white font-semibold text-true-blue hover:underline"
+					id="keywords"
+				>
+					Keywords
+				</a>
+			</header>
 
-	<Pagination currentPage={1} totalPosts={data.total} />
-</section>
+			<PostsList posts={data.posts} />
+			<Pagination currentPage={1} totalPosts={data.total} />
+		</div>
+	</div>
+</div>
