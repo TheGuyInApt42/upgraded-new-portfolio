@@ -17,7 +17,7 @@
 
 <HeadTags {metaData} />
 
-<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+<div class="min-h-screen bg-gray-50 dark:bg-black">
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative top-28 lg:top-[120px]">
 		<div class="max-w-4xl mx-auto">
 			<header class="flex justify-between items-center mb-8">
