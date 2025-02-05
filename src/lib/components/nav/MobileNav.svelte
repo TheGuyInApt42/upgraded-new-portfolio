@@ -233,7 +233,7 @@
 				<!-- Menu Item -->
 				<div class="inline-block relative">
 					<li class="relative z-10 text-4xl font-light dark:text-white">
-						<a href="/contact" class="inline-block h-full w-full">Blog</a>
+						<a href="/blog" class="inline-block h-full w-full">Blog</a>
 					</li>
 					<div class="absolute bottom-0 h-2 w-full bg-accent dark:bg-orange-accent"></div>
 				</div>
