@@ -22,6 +22,7 @@
 	import HomeContact from '@components/home-contact/HomeContact.svelte';
 	import HomeProjectCard from '@components/home-project-card/HomeProjectCard.svelte';
 	import MiniBanner from '@components/mini-banner/MiniBanner.svelte';
+	import BlogSection from '@components/blog/BlogSection.svelte';
 
 	// End: Local Imports
 
@@ -110,6 +111,20 @@
 					'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/GWC/projects/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.webp',
 				webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/GWC/projects/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.webp',
 				jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1696524205/GWC/projects/Web_capture_5-10-2023_124212_rhinostreet.com_amazax.jpg'
+			},
+			work: 'Web Design + Web Development + Hosting',
+			type: 'Small Business'
+		},
+		{
+			title: 'Camp Hill Play N Trade',
+			description: `I designed and developed this site for a video game retail store.`,
+			tools: 'Sveltekit, Tailwind',
+			url: 'https://camphillplayntrade.com',
+			img: {
+				default:
+					'https://res.cloudinary.com/blackgandalf/image/upload/v1739398413/GWC/projects/PlayNTrade___Home_l1qqrf.webp',
+				webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1739398413/GWC/projects/PlayNTrade___Home_l1qqrf.webp',
+				jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1739398413/GWC/projects/PlayNTrade___Home_l1qqrf.jpg'
 			},
 			work: 'Web Design + Web Development + Hosting',
 			type: 'Small Business'
@@ -211,13 +226,13 @@
 					>
 						<span class="text-lg opacity-75"> Small Business </span>
 					</button>
-					<button
+					<!-- <button
 						class={projectFilterBtnStyle}
 						class:active={clickedType === 'Education'}
 						on:click={filterProjects}
 					>
 						<span class="text-lg opacity-75"> Education </span>
-					</button>
+					</button> -->
 				</div>
 			</div>
 
@@ -252,6 +267,8 @@
 	{/if}
     -->
 <!-- End: Testimonials -->
+
+<BlogSection />
 
 <MiniBanner />
 
