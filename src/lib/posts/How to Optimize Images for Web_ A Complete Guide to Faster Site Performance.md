@@ -17,7 +17,7 @@ excerpt: Master proven techniques to optimize images for web and dramatically bo
 </script>
 
 
-# How to Optimize Images for Web: A Complete Guide to Faster Site Performance
+
 
 ## Understanding Why Image Optimization Matters
 

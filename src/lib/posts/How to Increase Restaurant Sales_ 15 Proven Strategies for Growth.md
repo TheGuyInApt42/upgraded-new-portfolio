@@ -19,7 +19,7 @@ excerpt: Master proven strategies to increase restaurant sales with actionable t
 
 
 
-# How to Increase Restaurant Sales: 15 Proven Strategies for Growth
+
 
 ## Understanding Modern Restaurant Industry Dynamics
 

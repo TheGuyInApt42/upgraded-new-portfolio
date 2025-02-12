@@ -17,7 +17,7 @@ excerpt: Transform your landing page strategy with data-driven techniques that c
     import { ExternalLink } from "@theguyinapt42/svelte-components"
 </script>
 
-# How to Create Landing Pages That Convert: Your Proven Success Blueprint
+
 
 ## Understanding Landing Page Success Foundations
 

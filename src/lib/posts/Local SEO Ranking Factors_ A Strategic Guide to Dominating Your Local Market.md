@@ -16,7 +16,7 @@ excerpt: Master the essential local SEO ranking factors that drive business visi
     import { ExternalLink } from "@theguyinapt42/svelte-components"
 </script>
 
-# Local SEO Ranking Factors: A Strategic Guide to Dominating Your Local Market
+
 
 ## Mastering Google Business Profile for Local SEO Success
 
