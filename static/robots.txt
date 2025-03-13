@@ -1,5 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
+# Allow all the things
+Allow: /
+
 Disallow:
 
 Sitemap: https://gorhamwebconsulting/sitemap.xml
