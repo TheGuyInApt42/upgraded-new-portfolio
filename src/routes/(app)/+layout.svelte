@@ -5,7 +5,7 @@
 	// Start: External Imports
 
 	// End: External Imports
-	import '../styles/tailwind.postcss';
+	import '../../styles/tailwind.postcss';
 
 	// Core services
 	// Store Imports
