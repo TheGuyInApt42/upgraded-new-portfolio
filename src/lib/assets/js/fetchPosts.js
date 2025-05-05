@@ -1,3 +1,4 @@
+//lib/assets/js/fetchPosts.js
 import { postsPerPage } from '$lib/config';
 
 const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = {}) => {
