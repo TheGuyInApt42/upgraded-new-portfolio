@@ -1,59 +1,43 @@
 <script>
-	import { browser } from '$app/environment';
+/**
+ * @type {IServiceBlock}
+ */
+export let service;
 
-	// Start: Local Imports
-	// Components
-
-
-	// End: Local Imports
-
-	// Start: Exported Properties
-	/**
-	 * @type {IServiceBlock}
-	 */
-	export let service;
-	// End: Exported Properties
-
-	const setAlignment =
-		service.alignment == 'right'
-			? 'relative w-full overflow-hidden pb-1/1 xl:pb-2/3 lg:order-2'
-			: 'relative w-full overflow-hidden pb-1/1 xl:pb-2/3';
+const imageLayout =
+service?.alignment === 'right'
+? 'relative order-2 w-full overflow-hidden rounded-[36px] border border-slate-200/80 bg-white/30 p-4 shadow-xl shadow-slate-200/60 dark:border-white/10 dark:bg-white/5 dark:shadow-black/40'
+: 'relative w-full overflow-hidden rounded-[36px] border border-slate-200/80 bg-white/30 p-4 shadow-xl shadow-slate-200/60 dark:border-white/10 dark:bg-white/5 dark:shadow-black/40';
 </script>
 
 {#if service}
-	<div class="mb-8 lg:grid lg:grid-cols-2 md:mb-10 ">
-		<!-- Pic and # -->
-		<div class="{setAlignment}">
-			<img
-				class="absolute bottom-0 right-0 object-cover w-full h-full"
-				src="{service.imageSrc}"
-				alt="{service.imageAlt}"
-			/>
-		</div>
+<div class="mb-14 grid gap-10 lg:grid-cols-2 lg:items-center">
+<!-- Image -->
+<div class={imageLayout}>
+<div class="aspect-[4/3] overflow-hidden rounded-[28px] bg-slate-900/5 dark:bg-slate-900/40">
+<img
+src={service.imageSrc}
+alt={service.imageAlt}
+loading="lazy"
+class="h-full w-full object-cover transition duration-500 will-change-transform hover:scale-105"
+/>
+</div>
+</div>
 
-		<!-- Text -->
-		<div
-			class="flex flex-col items-center justify-center px-6 pt-8 pb-16 md:pt-10 md:pb-20 lg:px-20 lg:pt-20 lg:pb-24 bg-blue-green-accent dark:bg-orange-accent"
-		>
-			<div>
-				<!-- Heading -->
-				<h2 class="mb-6 text-2xl font-bold lg:text-4xl lg:mb-12">{service.heading}</h2>
-
-				<!-- Short desciption -->
-				<p class="mb-6 md:text-lg lg:text-xl lg:mb-12">{service.tagline} </p>
-				<div class="relative z-20 mb-10 lg:mb-12">
-					<div class="-mt-2 text-base max-w-prose md:text-lg lg:text-xl"
-						><div class="relative z-20 inline-block">
-							<div class="absolute w-full h-3 transform opacity-75 bottom-1 bg-accent2Light -rotate-3">
-							</div>
-						</div>
-						{service.interesting}</div
-					>
-				</div>
-
-				<!-- Longer text -->
-				<p class="text-sm leading-normal md:text-base lg:leading-relaxed">{service.text}</p>
-			</div>
-		</div>
-	</div>
+<!-- Text -->
+<div
+class="rounded-3xl border border-slate-200 bg-white/85 p-8 text-slate-800 shadow-lg shadow-slate-200/50 transition dark:border-white/10 dark:bg-slate-900/60 dark:text-white/80 dark:shadow-black/30"
+>
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 dark:border-white/20 dark:bg-white/10 dark:text-white/70">
+{service.heading}
+</div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white lg:text-4xl">{service.tagline}</h2>
+<p class="text-base leading-relaxed text-slate-600 dark:text-white/70">{service.text}</p>
+<div class="rounded-2xl border border-emerald-200/70 bg-emerald-50/80 p-4 text-sm font-medium text-slate-800 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-100">
+{service.interesting}
+</div>
+</div>
+</div>
+</div>
 {/if}

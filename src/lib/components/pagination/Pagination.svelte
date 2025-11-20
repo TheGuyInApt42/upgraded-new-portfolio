@@ -44,14 +44,33 @@
 	{/if}
 {/key} -->
 
-<nav>
+<nav class="flex items-center justify-center gap-4" aria-label="Pagination">
 	{#if currentPage > 1}
-		<a href={getPageUrl(currentPage - 1)}>Previous</a>
+		<a
+			href={getPageUrl(currentPage - 1)}
+			class="inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/80 px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 dark:border-white/30 dark:bg-white/10 dark:text-white/80 dark:hover:border-white/50 dark:hover:bg-white/15"
+		>
+			<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<path d="M19 12H5M12 19l-7-7 7-7" />
+			</svg>
+			Previous
+		</a>
 	{/if}
 
-	<span>Page {currentPage} of {totalPages}</span>
+	<span class="text-sm font-medium text-slate-600 dark:text-white/70">
+		Page <span class="font-semibold text-slate-900 dark:text-white">{currentPage}</span> of
+		<span class="font-semibold text-slate-900 dark:text-white">{totalPages}</span>
+	</span>
 
 	{#if currentPage < totalPages}
-		<a href={getPageUrl(currentPage + 1)}>Next</a>
+		<a
+			href={getPageUrl(currentPage + 1)}
+			class="inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/80 px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 dark:border-white/30 dark:bg-white/10 dark:text-white/80 dark:hover:border-white/50 dark:hover:bg-white/15"
+		>
+			Next
+			<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<path d="M5 12h14M12 5l7 7-7 7" />
+			</svg>
+		</a>
 	{/if}
 </nav>

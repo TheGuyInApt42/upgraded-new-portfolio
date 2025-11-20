@@ -1,6 +1,7 @@
 <script>
 	// Start: Local Imports
-	import { onMount } from 'svelte';
+	import { onNavigate } from '$app/navigation';
+	import { browser } from '$app/environment';
 
 	// Start: External Imports
 
@@ -15,16 +16,12 @@
 	import Headroom from '@components/header/Headroom.svelte';
 	import Header from '@components/header/Header.svelte';
 	import MobileNav from '@components/nav/MobileNav.svelte';
-	import DesktopNav from '@components/nav/DesktopNav.svelte';
 	import FtmFooter from '@components/footer/FTMFooter.svelte';
-	import Footer from '@components/footer/Footer.svelte';
-	import RouteTransition from '@components/route-transition/RouteTransition.svelte';
 	import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
 
 	// End: Local Imports
 
 	// Start: Local component properties
-	export let path = '';
 
 	const navLinks = [
 		{
@@ -36,7 +33,7 @@
 			label: 'About'
 		},
 		{
-			path: '/#projects',
+			path: '/projects',
 			label: 'Projects'
 		},
 
@@ -55,16 +52,28 @@
 	];
 
 	// End: Local component properties
-	onMount(async () => {
-		let html = document.getElementsByTagName('html').item(0);
-		html.className = $theme;
-	});
 
-	// Start: Local component methods
+	// View Transitions - only on client
+	if (browser) {
+		onNavigate((navigation) => {
+			if (!document.startViewTransition) return;
+
+			return new Promise((resolve) => {
+				document.startViewTransition(async () => {
+					resolve();
+					await navigation.complete;
+				});
+			});
+		});
+	}
+
+	// Theme reactivity
+	$: if (browser) {
+		document.documentElement.className = $theme;
+	}
 
 	const toggleThemeMode = (event) => {
-		const htmlTag = document.getElementsByTagName('html').item(0);
-		htmlTag.className = event.detail.dark ? 'dark' : 'light';
+		theme.set(event.detail.dark ? 'dark' : 'light');
 	};
 
 	// End: Local component methods
@@ -72,14 +81,14 @@
 
 <GoogleAnalytics properties={['G-VRMPNCPJGE', 'G-D0X54E5THK']} />
 
-<div class="bg-white dark:bg-black flex flex-col">
+<div class="bg-white dark:bg-black flex flex-col min-h-screen">
 	<!-- Start: Header Navigation -->
 
 	<Headroom>
 		<Header
-			on:toggleTheme={(e) => toggleThemeMode(e)}
+			on:toggleTheme={toggleThemeMode}
 			{navLinks}
-			logoImage={'https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.webp'}
+			logoImage={'https://res.cloudinary.com/blackgandalf/image/upload/v1763051082/GWC/logos/ChatGPT_Logo_Redesign_Nov_13_2025_vqcb2q.webp'}
 			title={''}
 			useThemeModeButton={false}
 			useTitleAndLogo={true}
@@ -93,11 +102,11 @@
     -->
 
 	<!-- End: Header Navigation -->
-	<main id="skip" class="flex flex-col md:justify-center bg-white dark:bg-black md:p-0">
+	<main id="skip" class="flex flex-1 flex-col md:justify-center bg-white dark:bg-black md:p-0">
 		<!-- Start: Defaull layout slot -->
-		<RouteTransition referesh={path}>
-			<slot />
-		</RouteTransition>
+
+		<slot />
+
 		<!-- End: Defaull layout slot -->
 		<!-- Start: Footer -->
 
@@ -107,6 +116,10 @@
 </div>
 
 <style>
+	:global(::view-transition-old(root)),
+	:global(::view-transition-new(root)) {
+		animation-duration: 0.3s;
+	}
 	main {
 		max-width: 100vw;
 	}

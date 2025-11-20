@@ -1,11 +1,11 @@
 <script>
-	import { blur } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
 	export let referesh = '';
 </script>
 
 {#key referesh}
-	<span in:blur|global="{{ duration: 300, delay: 300, amount: 5 }}" out:blur|global="{{ duration: 300 }}">
+	<div in:fade|global={{ duration: 150 }} out:fade|global={{ duration: 150 }}>
 		<slot />
-	</span>
+	</div>
 {/key}

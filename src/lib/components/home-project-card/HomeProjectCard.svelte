@@ -1,7 +1,5 @@
 <script>
-	import { openModal } from 'svelte-modals';
 	import { fade, scale } from 'svelte/transition';
-	import ProjectModal2 from '../modal/ProjectModal2.svelte';
 
 	export let heading;
 	export let tools;
@@ -10,20 +8,13 @@
 	export let img;
 	export let skills;
 	export let type;
+	export let slug = null; // Optional slug for case study link
 
-	function handleClick() {
-		openModal(ProjectModal2, {
-			title: heading,
-			message: text,
-			site: url,
-			imgSrc: img,
-			work: skills,
-			tech: tools
-		});
-	}
+	// If slug is provided, link to case study, otherwise use the modal (for backwards compatibility)
+	const caseStudyPath = slug ? `/projects/${slug}` : null;
 </script>
 
-<article in:scale|global out:fade|global>
+<article>
 	<!-- Project Image -->
 	<div class="card">
 		<picture>
@@ -43,7 +34,16 @@
 			<div class="overlay__text">
 				<h3>{heading}</h3>
 				<p class="p-2 text-true-blue">{type}</p>
-				<button class="px-4 bg-true-blue py-2" on:click={handleClick}>Learn More</button>
+				{#if caseStudyPath}
+					<a href={caseStudyPath} class="px-4 bg-true-blue py-2 inline-block">Learn More</a>
+				{:else}
+					<a
+						href={url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="px-4 bg-true-blue py-2 inline-block">Visit Site</a
+					>
+				{/if}
 			</div>
 		</div>
 	</div>
