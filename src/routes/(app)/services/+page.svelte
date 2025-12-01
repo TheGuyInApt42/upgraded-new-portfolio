@@ -11,7 +11,8 @@
 	// Components
 
 	import HeadTags from '@components/head-tags/HeadTags.svelte';
-	import MiniBanner from '@components/mini-banner/MiniBanner.svelte';
+
+	import Prefooter from '@components/prefooter/Prefooter.svelte';
 
 	import ServicePackages from './components/service-packages/ServicePackages.svelte';
 
@@ -132,5 +133,5 @@
 		</div>
 	</section>
 
-	<MiniBanner />
+	<Prefooter />
 </main>

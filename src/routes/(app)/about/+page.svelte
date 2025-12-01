@@ -2,6 +2,7 @@
 	// Start: Local Imports
 	import HeadTags from '@components/head-tags/HeadTags.svelte';
 	import ExternalLink from '@components/external-link/ExternalLink.svelte';
+	import Prefooter from '@components/prefooter/Prefooter.svelte';
 	// End: Local Imports
 
 	/**
@@ -124,3 +125,5 @@
 		</div>
 	</div>
 </section>
+
+<Prefooter />

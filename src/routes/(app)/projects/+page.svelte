@@ -5,6 +5,7 @@
 	// Start: Local Imports
 	import HeadTags from '@components/head-tags/HeadTags.svelte';
 	import HomeProjectCard from '@components/home-project-card/HomeProjectCard.svelte';
+	import Prefooter from '@components/prefooter/Prefooter.svelte';
 	import { projects } from '$lib/config';
 	// End: Local Imports
 
@@ -122,6 +123,8 @@
 			</div>
 		</div>
 	</section>
+
+	<Prefooter />
 </main>
 
 <style>
