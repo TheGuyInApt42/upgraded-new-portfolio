@@ -209,7 +209,7 @@
 				<!-- Menu Item -->
 				<div class="inline-block relative">
 					<li class="relative z-10 text-4xl font-light dark:text-white">
-						<a href="/#projects" class="inline-block h-full w-full">Projects</a>
+						<a href="/projects" class="inline-block h-full w-full">Projects</a>
 					</li>
 					<div class="absolute bottom-0 h-2 w-full bg-accent dark:bg-orange-accent"></div>
 				</div>
