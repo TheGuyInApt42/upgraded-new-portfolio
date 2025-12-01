@@ -1,5 +1,6 @@
 <script>
 	// Sevelte Imports
+	import { page } from '$app/stores';
 	// Utils
 
 	// Components
@@ -24,6 +25,9 @@
 		keywords: ['contact', 'contact ralph gorham', 'message gorham web consulting'],
 		searchUrl: '/contact'
 	};
+
+	// Get query parameters for prefilling form
+	$: serviceParam = $page.url.searchParams.get('service');
 </script>
 
 <!-- Start: Header Tag -->
@@ -44,6 +48,6 @@
 	</div>
 
 	<div class="relative mx-auto max-w-7xl px-6 pt-28 md:px-8 lg:pt-32">
-		<UpdatedContactForm />
+		<UpdatedContactForm {serviceParam} />
 	</div>
 </section>

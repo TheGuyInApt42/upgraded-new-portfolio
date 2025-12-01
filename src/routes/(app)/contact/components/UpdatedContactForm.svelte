@@ -14,7 +14,24 @@
 		minLength
 	} from 'svelte-use-form';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import { info } from '$lib/config';
+
+	// Props
+	export let serviceParam = null;
+
 	const form = useForm();
+
+	// Prefill form based on service parameter
+	let serviceInterest = '';
+	let budgetRange = '';
+
+	onMount(() => {
+		if (serviceParam === 'audit') {
+			serviceInterest = 'audit';
+			budgetRange = 'audit';
+		}
+	});
 
 	function handleForm(e) {
 		// Added 'e' argument to fix reference error
@@ -22,7 +39,6 @@
 		console.log(formData);
 		goto('/success');
 	}
-	import { info } from '$lib/config';
 </script>
 
 <div class="mx-auto max-w-6xl">
@@ -184,8 +200,9 @@
 							class="w-full bg-transparent text-slate-900 placeholder-slate-500 dark:text-white dark:placeholder-white/60"
 							name="service_interest"
 							id="service_interest"
+							bind:value={serviceInterest}
 						>
-							<option value="" disabled selected>What are you interested in?</option>
+							<option value="" disabled>What are you interested in?</option>
 							<option value="audit">The $299 Website Health Audit (Fix my site)</option>
 							<option value="build">A New Custom Website Build (Create a site)</option>
 							<option value="other">General Inquiry / Other</option>
@@ -251,8 +268,9 @@
 							class="w-full bg-transparent text-slate-900 placeholder-slate-500 dark:text-white dark:placeholder-white/60"
 							name="budget_range"
 							id="budget_range"
+							bind:value={budgetRange}
 						>
-							<option value="" disabled selected>Approximate Budget...</option>
+							<option value="" disabled>Approximate Budget...</option>
 							<option value="audit">Just the Audit ($299)</option>
 							<option value="small">$1,500 - $3,000</option>
 							<option value="medium">$3,000 - $5,000</option>

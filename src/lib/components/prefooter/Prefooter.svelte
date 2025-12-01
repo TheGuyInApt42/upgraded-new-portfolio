@@ -15,7 +15,7 @@
 
 		<div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
 			<a
-				href="/website-audit"
+				href="/contact?service=audit"
 				class="inline-flex items-center justify-center rounded-full bg-teal-500 px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:-translate-y-1 hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-900"
 			>
 				Get the $299 Audit
