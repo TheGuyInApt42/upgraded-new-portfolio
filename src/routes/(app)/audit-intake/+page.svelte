@@ -18,7 +18,7 @@
 			body: new URLSearchParams(formData).toString()
 		});
 
-		goto('/audit-success-final'); // A simple "Thanks, I'm on it!" page
+		goto('/audit-success'); // A simple "Thanks, I'm on it!" page
 	}
 </script>
 
