@@ -74,7 +74,7 @@
 			</ul>
 
 			<a
-				href="/audit"
+				href="/website-audit"
 				class="mt-10 inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3 text-center text-base font-semibold uppercase text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
 			>
 				Learn More & Start My Audit

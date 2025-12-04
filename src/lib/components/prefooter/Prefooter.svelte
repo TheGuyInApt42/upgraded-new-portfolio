@@ -1,3 +1,7 @@
+<script>
+	import StripeButton from '$lib/components/stripe/StripeButton.svelte';
+</script>
+
 <section class="relative bg-gray-900 py-16 px-4 text-center dark:bg-gray-800 lg:py-24">
 	<div class="absolute inset-0 overflow-hidden opacity-10">
 		<div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-teal-500 blur-3xl"></div>
@@ -15,7 +19,7 @@
 
 		<div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
 			<a
-				href="/contact?service=audit"
+				href="/website-audit"
 				class="inline-flex items-center justify-center rounded-full bg-teal-500 px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:-translate-y-1 hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-900"
 			>
 				Get the $299 Audit

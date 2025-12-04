@@ -1,4 +1,6 @@
 <script>
+	import StripeButton from '$lib/components/stripe/StripeButton.svelte';
+
 	const painPoints = [
 		"You're embarrassed to send people to your current website.",
 		'You know people visit your site, but your phone never rings.',
@@ -83,12 +85,7 @@
 			that shows you exactly where you're losing money and how to fix it.
 		</p>
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-			<a
-				href="/contact?service=audit"
-				class="inline-flex items-center justify-center rounded-full bg-turquoise-accent px-8 py-3 text-base font-semibold uppercase text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
-			>
-				Start My $299 Audit
-			</a>
+			<StripeButton />
 			<span class="text-sm text-slate-600 dark:text-white/60"
 				>Secure checkout · Takes under 2 minutes</span
 			>
@@ -277,16 +274,17 @@
 		<p class="text-base sm:text-lg">
 			Invest in your business today. Find out what's really broken, so you can finally fix it.
 		</p>
-		<a
+		<!-- <a
 			href="/contact?service=audit"
 			class="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-base font-semibold uppercase text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
 		>
 			Start My $299 Audit Now
-		</a>
-		<!-- TODO: Add back in later -->
-		<!-- <p class="text-sm text-slate-800/80">
+		</a> -->
+
+		<StripeButton />
+		<p class="text-sm text-slate-800/80">
 			You will be taken to a secure payment page. After payment, you'll receive your welcome form
 			immediately.
-		</p> -->
+		</p>
 	</div>
 </section>
