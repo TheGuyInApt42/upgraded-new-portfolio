@@ -1,29 +1,12 @@
 <script>
-	import { useForm, validators, required, url } from 'svelte-use-form';
-	import { goto } from '$app/navigation';
+	import { enhance } from '$app/forms';
 
-	const form = useForm();
-
-	// This handles the "Intake" form submission
-	// Since you are using Netlify (based on your previous code),
-	// this will send the data to your Netlify forms dashboard.
-	async function handleIntake(e) {
-		// In a real app, you might want to show a loading state here
-		const formData = new FormData(e.target);
-
-		// Submit to Netlify (or your form handler)
-		await fetch('/', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: new URLSearchParams(formData).toString()
-		});
-
-		goto('/audit-success'); // A simple "Thanks, I'm on it!" page
-	}
+	let submitting = false;
+	let result = null;
 </script>
 
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
-	<div class="max-w-2xl mx-auto">
+	<div class="max-w-2xl mx-auto lg:pt-28">
 		<div class="text-center mb-12">
 			<div
 				class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 dark:bg-green-900 mb-6"
@@ -57,15 +40,20 @@
 			class="bg-white dark:bg-black py-8 px-4 shadow-xl rounded-2xl sm:px-10 border border-gray-100 dark:border-gray-800"
 		>
 			<form
-				name="audit-intake"
 				method="POST"
-				data-netlify="true"
 				class="space-y-6"
-				on:submit|preventDefault={handleIntake}
-				use:form
+				use:enhance={() => {
+					submitting = true;
+					return async ({ result: formResult, update }) => {
+						submitting = false;
+						result = formResult.data;
+						if (formResult.data?.success) {
+							// Redirect on success
+							window.location.href = '/audit-success';
+						}
+					};
+				}}
 			>
-				<input type="hidden" name="form-name" value="audit-intake" />
-
 				<div>
 					<label for="website" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
 						Which website are we auditing?
@@ -74,9 +62,8 @@
 						<input
 							id="website"
 							name="website"
-							type="text"
+							type="url"
 							required
-							use:validators={[required, url]}
 							placeholder="https://example.com"
 							class="appearance-none block w-full px-3 py-3 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-900 dark:text-white sm:text-sm"
 						/>
@@ -120,12 +107,17 @@
 					</div>
 				</div>
 
+				{#if result && !result.success}
+					<p class="text-red-600 text-sm">{result.message}</p>
+				{/if}
+
 				<div>
 					<button
 						type="submit"
-						class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 uppercase tracking-wide transition-transform hover:-translate-y-0.5"
+						disabled={submitting}
+						class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 uppercase tracking-wide transition-transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
 					>
-						Start The Process
+						{submitting ? 'Submitting...' : 'Start The Process'}
 					</button>
 				</div>
 			</form>

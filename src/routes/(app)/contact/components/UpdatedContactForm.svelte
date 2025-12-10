@@ -254,7 +254,6 @@
 							id="website"
 							name="website"
 							placeholder="Current Website (Optional)..."
-							use:validators={[url]}
 						/>
 					</div>
 					<div class="error">
