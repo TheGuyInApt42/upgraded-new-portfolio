@@ -1,6 +1,8 @@
 <script>
 	import { enhance } from '$app/forms';
 
+	export let data;
+
 	let submitting = false;
 	let result = null;
 </script>
@@ -44,16 +46,57 @@
 				class="space-y-6"
 				use:enhance={() => {
 					submitting = true;
-					return async ({ result: formResult, update }) => {
+					return async ({ result: formResult }) => {
 						submitting = false;
 						result = formResult.data;
 						if (formResult.data?.success) {
-							// Redirect on success
 							window.location.href = '/audit-success';
 						}
 					};
 				}}
 			>
+				<!-- Hidden field to pass session ID -->
+				{#if data.customer?.sessionId}
+					<input type="hidden" name="sessionId" value={data.customer.sessionId} />
+				{/if}
+
+				<!-- Pre-filled customer fields (read-only since we trust Stripe data) -->
+				<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+					<div>
+						<label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+							Name
+						</label>
+						<input
+							id="name"
+							name="name"
+							type="text"
+							required
+							value={data.customer?.name || ''}
+							readonly={!!data.customer?.name}
+							class="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm dark:bg-gray-900 dark:text-white sm:text-sm {data
+								.customer?.name
+								? 'bg-gray-50 dark:bg-gray-800'
+								: ''}"
+						/>
+					</div>
+					<div>
+						<label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+							Email
+						</label>
+						<input
+							id="email"
+							name="email"
+							type="email"
+							required
+							value={data.customer?.email || ''}
+							readonly={!!data.customer?.email}
+							class="mt-1 block w-full px-3 py-3 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm dark:bg-gray-900 dark:text-white sm:text-sm {data
+								.customer?.email
+								? 'bg-gray-50 dark:bg-gray-800'
+								: ''}"
+						/>
+					</div>
+				</div>
 				<div>
 					<label for="website" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
 						Which website are we auditing?
