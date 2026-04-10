@@ -6,6 +6,9 @@ const config = {
 		fs: {
 			allow: ['.']
 		}
+	},
+	optimizeDeps: {
+		include: ['@lucide/svelte']
 	}
 };
 
