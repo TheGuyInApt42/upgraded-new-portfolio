@@ -13,7 +13,8 @@
 	 *   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
 	 */
 
-	import { siteConfig as config } from './siteConfig.js';
+	export let data;
+	const { config } = data;
 
 	import Header from '../components/Header.svelte';
 	import Hero from '../components/Hero.svelte';
