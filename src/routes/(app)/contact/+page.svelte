@@ -50,4 +50,12 @@
 	<div class="relative mx-auto max-w-7xl px-6 pt-28 md:px-8 lg:pt-32">
 		<UpdatedContactForm {serviceParam} />
 	</div>
+
+	<p class="text-center text-sm text-slate-600 dark:text-white/70 mt-10">
+		Happy with our services? Leave a review <a
+			href="/review"
+			class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
+			>here</a
+		>!
+	</p>
 </section>
