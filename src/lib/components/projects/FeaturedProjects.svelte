@@ -3,6 +3,13 @@
 	import { getFeaturedProjects } from '$lib/config';
 
 	const featuredProjects = getFeaturedProjects();
+
+	function cloudinaryImage(url, width = 600, height = 462) {
+		return url.replace(
+			'/image/upload/',
+			`/image/upload/f_auto,q_auto,w_${width},h_${height},c_fill/`
+		);
+	}
 </script>
 
 <!-- Featured Projects -->
@@ -37,7 +44,11 @@
 							tools={project.tools}
 							text={project.description}
 							url={project.url}
-							img={project.img}
+							img={{
+								...project.img,
+								webp: cloudinaryImage(project.img.webp, 600),
+								default: cloudinaryImage(project.img.default, 600)
+							}}
 							skills={project.work}
 							type={project.type}
 							slug={project.slug}

@@ -1,6 +1,4 @@
 <script>
-	import { fade, scale } from 'svelte/transition';
-
 	export let heading;
 	export let tools;
 	export let text;
@@ -10,6 +8,13 @@
 	export let type;
 	export let slug = null; // Optional slug for case study link
 
+	function cloudinaryImage(url, width = 600, height = 462) {
+		return url.replace(
+			'/image/upload/',
+			`/image/upload/f_auto,q_auto,w_${width},h_${height},c_fill/`
+		);
+	}
+
 	// If slug is provided, link to case study, otherwise use the modal (for backwards compatibility)
 	const caseStudyPath = slug ? `/projects/${slug}` : null;
 </script>
@@ -18,11 +23,28 @@
 	<!-- Project Image -->
 	<div class="card">
 		<picture>
-			<source srcset={`${img.webp}`} type="image/webp" />
-			<source srcset={`${img.jpg}`} type="image/jpeg" />
+			<source
+				srcset={`
+					${cloudinaryImage(img.webp, 400, 308)} 400w,
+					${cloudinaryImage(img.webp, 600, 462)} 600w,
+					${cloudinaryImage(img.webp, 800, 616)} 800w
+				`}
+				sizes="(max-width: 768px) 100vw, 390px"
+				type="image/webp"
+			/>
+
+			<source
+				srcset={`
+					${cloudinaryImage(img.jpg, 400, 308)} 400w,
+					${cloudinaryImage(img.jpg, 600, 462)} 600w,
+					${cloudinaryImage(img.jpg, 800, 616)} 800w
+				`}
+				sizes="(max-width: 768px) 100vw, 390px"
+				type="image/jpeg"
+			/>
 			<img
 				class="card__image"
-				src={`${img.default}`}
+				src={cloudinaryImage(img.default, 600, 462)}
 				alt="Example page from {heading}"
 				width="390"
 				height="300"
@@ -97,13 +119,6 @@
 		-ms-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 		text-align: center;
-	}
-
-	button {
-		margin-top: 2rem;
-		display: inline-block;
-		color: white;
-		text-decoration: none;
 	}
 
 	@media screen and (max-width: 768px) {
