@@ -1,4 +1,5 @@
 <script>
+	import HeadTags from '@components/head-tags/HeadTags.svelte';
 	import StripeButton from '$lib/components/stripe/StripeButton.svelte';
 
 	const painPoints = [
@@ -59,7 +60,26 @@
 				'We hop on a 30-minute strategy call. I walk you through the report and hand you your step-by-step plan.'
 		}
 	];
+
+	/**
+	 * @type {IMetaTagProperties}
+	 */
+	const metaData = {
+		title: `Website Audit`,
+		description:
+			"Get a simple, 10-point Website Health Audit that shows you exactly where you're losing money and how to fix it.",
+		keywords: [
+			'Website Audit',
+			'Website Health Audit',
+			'Website Audit Report',
+			'Website Audit Checklist',
+			'Website Audit Tool',
+			'Website Audit Service'
+		]
+	};
 </script>
+
+<HeadTags {metaData} />
 
 <!-- Hero -->
 <section
@@ -246,8 +266,8 @@
 		</h2>
 		<p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-white/70">
 			<strong class="font-semibold text-slate-900 dark:text-white">Here's my promise:</strong> The PDF
-			report and all my analysis are yours to keep. You can take that action plan and hand it to any
-			designer—or even DIY.
+			report and all my analysis are yours to keep. You can take that action plan and hand it to any designer—or
+			even DIY.
 		</p>
 		<p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-white/70">
 			But if you decide to hire me to do the full redesign, I'll apply the $299 you paid for this
