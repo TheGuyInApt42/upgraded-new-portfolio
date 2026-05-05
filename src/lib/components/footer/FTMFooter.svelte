@@ -113,10 +113,9 @@
 		<!-- Icons -->
 		<div class="flex mt-4 mb-2 justify-center md:justify-end md:gap-x-3 md:mt-0 md:mb-0">
 			<!-- Mail Icon -->
-			<ExternalLink
-				href="mailto:info@gorhamwebconsulting.com"
-				cssClasses="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition inline-block"
-				ariaLabel={'Footer Email link'}
+			<a
+				href="/contact"
+				class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition inline-block"
 			>
 				<svg
 					width="20"
@@ -132,7 +131,7 @@
 						fill="currentColor"
 					></path>
 				</svg>
-			</ExternalLink>
+			</a>
 
 			<!-- Twitter Icon -->
 			<ExternalLink

@@ -97,27 +97,29 @@ export const defaultServices = [
 
 export const projects = [
 	{
-		title: 'Ralph J Gorham',
-		slug: 'ralph-j-gorham',
-		description: `This was my second personal portfolio page. 
-		It includes list of projects worked as well as a personal blog.`,
-		tools: 'Svelte/ Strapi CMS',
-		url: 'https://ralphjgorham.com',
+		title: 'Ozzie Auto Body',
+		slug: 'ozzie-auto-body',
+		description: `I designed and developed this website for a local auto body shop.`,
+		tools: 'Sveltekit, Tailwind',
+		url: 'https://ozzieautobody.com',
 		img: {
 			default:
-				'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
-			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
-			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.jpg'
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1777990763/GWC/projects/Image_5-5-26_at_10.16_AM_xwmwht.png',
+			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1777990763/GWC/projects/Image_5-5-26_at_10.16_AM_xwmwht.webp',
+			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1777990763/GWC/projects/Image_5-5-26_at_10.16_AM_xwmwht.jpg'
 		},
 		work: 'Web Design + Web Development + Hosting',
-		type: 'Personal',
-		problem:
-			'Needed a modern portfolio site to showcase projects and blog posts, with a clean design that reflects professional development skills.',
+		type: 'Small Business',
+		problem: `Ozzie Auto Body needed a modern, fast website to showcase their services 
+			and attract more customers as well as provide a way for customers to get estimates 
+			and schedule appointments.`,
 		solution:
-			'Built a custom Svelte-based portfolio with Strapi CMS integration, featuring a responsive design, blog functionality, and project showcase.',
-		result:
-			'Created a fast, maintainable portfolio that effectively showcases work and allows for easy content updates through the CMS.'
+			'Built a modern, fast website using Sveltekit and Tailwind that highlights their services and makes it easy for customers to find them.',
+		result: `Created a fast, maintainable website that effectively showcases their services and 
+			allows for customers to get estimates and schedule appointments. The website is also optimized for 
+			search engines and social media.`
 	},
+
 	{
 		title: 'Camp Hill Play N Trade',
 		slug: 'camp-hill-play-n-trade',
@@ -160,6 +162,28 @@ export const projects = [
 			'Created a modern, responsive website with Svelte and Express backend, featuring an elegant design that highlights the venue, easy navigation, and clear booking information.',
 		result:
 			'The new website increased online inquiries by 150% and made it easier for clients to understand the venue offerings, leading to more bookings.'
+	},
+	{
+		title: 'Ralph J Gorham',
+		slug: 'ralph-j-gorham',
+		description: `This was my second personal portfolio page. 
+		It includes list of projects worked as well as a personal blog.`,
+		tools: 'Svelte/ Strapi CMS',
+		url: 'https://ralphjgorham.com',
+		img: {
+			default:
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
+			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
+			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.jpg'
+		},
+		work: 'Web Design + Web Development + Hosting',
+		type: 'Personal',
+		problem:
+			'Needed a modern portfolio site to showcase projects and blog posts, with a clean design that reflects professional development skills.',
+		solution:
+			'Built a custom Svelte-based portfolio with Strapi CMS integration, featuring a responsive design, blog functionality, and project showcase.',
+		result:
+			'Created a fast, maintainable portfolio that effectively showcases work and allows for easy content updates through the CMS.'
 	},
 	{
 		title: 'RHINOStreet',
