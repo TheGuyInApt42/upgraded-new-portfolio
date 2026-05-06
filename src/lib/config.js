@@ -138,8 +138,29 @@ export const projects = [
 			'Camp Hill Play N Trade needed an online presence to showcase their inventory, attract gaming enthusiasts, and compete with larger retailers in the video game market.',
 		solution:
 			'Developed a vibrant, engaging website using SvelteKit and Tailwind that highlights their game inventory, creates an appealing brand presence, and makes it easy for customers to find what they need.',
-		result:
-			'The website increased online traffic and helped the store establish a stronger digital presence, attracting more local gaming customers and improving brand recognition.'
+		result: `The website increased online traffic with average sessions of 100+and helped the store establish a stronger digital presence, 
+			attracting more local gaming customers and improving brand recognition.`
+	},
+	{
+		title: 'The Skincare Bakery',
+		slug: 'the-skincare-bakery',
+		description: `I implemented a redesign for this site for a skincare brand that was previously built on Wix 
+		and needed an updated look and feel, as well as moving it to Shopify.`,
+		tools: 'Shopify',
+		url: 'https://theskincarebakery.com',
+		img: {
+			default:
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1778088981/GWC/projects/Image_5-6-26_at_1.34_PM_ndcvmf.webp',
+			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1778088981/GWC/projects/Image_5-6-26_at_1.34_PM_ndcvmf.webp',
+			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1778088981/GWC/projects/Image_5-6-26_at_1.34_PM_ndcvmf.jpg'
+		},
+		work: 'E-Commerce + Shopify Development + DNS Management',
+		type: 'Small Business',
+		problem:
+			'The Skincare Bakery needed an updated website to better showcase their products and move away from Wix.',
+		solution:
+			'Implemented a redesign for the website using Shopify, ensuring a modern, fast, and user-friendly experience. The website is now faster, more user-friendly, and has a modern look and feel.',
+		result: `The new website has improved the brand's online presence and helped attract more customers.`
 	},
 
 	{
