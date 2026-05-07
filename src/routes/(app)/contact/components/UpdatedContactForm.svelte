@@ -86,7 +86,9 @@
 							Telephone Number
 						</span>
 						<span class="mt-1 block text-base font-semibold text-slate-900 dark:text-white">
-							{info.phone}
+							<a href="tel:{info.phone}" class="hover:underline focus:underline focus:outline-none">
+								{info.phoneDisplay}</a
+							>
 						</span>
 					</div>
 				</div>
@@ -116,7 +118,10 @@
 							Email Address
 						</span>
 						<span class="mt-1 block text-base font-semibold text-slate-900 dark:text-white">
-							{info.email}
+							<a
+								href="mailto:{info.email}"
+								class="hover:underline focus:underline focus:outline-none">{info.email}</a
+							>
 						</span>
 					</div>
 				</div>

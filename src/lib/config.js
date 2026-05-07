@@ -36,7 +36,8 @@ export const info = {
 	niche: 'Landscaping Websites by Gorham Web Consulting',
 	address: '343 S 2nd Ave',
 	city: 'Mount Vernon, NY 10550',
-	phone: '(914) 419-4033',
+	phoneDisplay: '(914)419-4033',
+	phone: '9144194033',
 	email: 'ralph@gorhamwebconsulting.com',
 	services: [
 		{

@@ -1,5 +1,19 @@
 <script>
 	import { enhance } from '$app/forms';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		if (!sessionStorage.getItem('audit_purchase_tracked')) {
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				event: 'audit_purchase',
+				value: 299,
+				currency: 'USD'
+			});
+
+			sessionStorage.setItem('audit_purchase_tracked', 'true');
+		}
+	});
 
 	export let data;
 
@@ -50,7 +64,14 @@
 						submitting = false;
 						result = formResult.data;
 						if (formResult.data?.success) {
-							window.location.href = '/audit-success';
+							window.dataLayer = window.dataLayer || [];
+							window.dataLayer.push({
+								event: 'audit_intake_submission'
+							});
+
+							setTimeout(() => {
+								window.location.href = '/audit-success';
+							}, 300);
 						}
 					};
 				}}
