@@ -34,10 +34,16 @@
 	});
 
 	function handleForm(e) {
-		// Added 'e' argument to fix reference error
 		const formData = new FormData(e.target);
-		console.log(formData);
-		goto('/success');
+
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			event: 'contact_form_submission',
+			service_interest: formData.get('service_interest'),
+			budget_range: formData.get('budget_range')
+		});
+
+		setTimeout(() => goto('/success'), 300);
 	}
 </script>
 
@@ -182,6 +188,7 @@
 					class="space-y-4"
 					action="/form?/sendForm"
 					use:form
+					on:submit|preventDefault={handleForm}
 				>
 					<p class="hidden">
 						<label
@@ -218,7 +225,6 @@
 							id="name"
 							name="name"
 							required
-							pattern="\S+.*"
 							placeholder="Name..."
 						/>
 					</div>
