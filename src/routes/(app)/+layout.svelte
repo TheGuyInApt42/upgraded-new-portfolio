@@ -17,7 +17,6 @@
 	import Header from '@components/header/Header.svelte';
 	import MobileNav from '@components/nav/MobileNav.svelte';
 	import FtmFooter from '@components/footer/FTMFooter.svelte';
-	import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
 
 	// End: Local Imports
 
@@ -78,8 +77,6 @@
 
 	// End: Local component methods
 </script>
-
-<GoogleAnalytics properties={['G-VRMPNCPJGE', 'G-D0X54E5THK']} />
 
 <div class="bg-white dark:bg-black flex flex-col min-h-screen">
 	<!-- Start: Header Navigation -->
