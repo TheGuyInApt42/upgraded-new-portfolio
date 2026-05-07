@@ -44,6 +44,7 @@
 
 			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 				<a
+					id="hire-cta"
 					href="/contact"
 					class="inline-flex items-center justify-center rounded-full bg-turquoise-accent px-8 py-3 text-base font-semibold uppercase text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
 				>
@@ -81,6 +82,7 @@
 						</p>
 					</div>
 					<a
+						id="audit-cta"
 						href="/website-audit"
 						class="mt-6 inline-flex items-center justify-center rounded-full bg-teal-500/90 px-6 py-3 text-sm font-semibold uppercase text-slate-900 shadow-md transition hover:bg-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-teal-400/80 dark:hover:bg-teal-300 dark:focus-visible:ring-emerald-200 dark:focus-visible:ring-offset-slate-900"
 					>
@@ -100,6 +102,7 @@
 						</p>
 					</div>
 					<a
+						id="consultation-cta"
 						href="/contact"
 						class="mt-6 inline-flex items-center justify-center rounded-full border border-amber-300/60 bg-amber-200/90 px-6 py-3 text-sm font-semibold uppercase text-slate-900 shadow-md transition hover:bg-amber-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-amber-400/70 dark:bg-amber-300/80 dark:text-slate-900 dark:hover:bg-amber-300 dark:focus-visible:ring-amber-200 dark:focus-visible:ring-offset-slate-900"
 					>
