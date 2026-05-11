@@ -6,6 +6,7 @@
 	import { theme } from '@stores';
 
 	import ExternalLink from '@components/external-link/ExternalLink.svelte';
+	import Logo from '@components/logo/Logo.svelte';
 
 	let iconColor;
 
@@ -95,22 +96,8 @@
 		</button>
 	</div>
 	<!-- Logo -->
-	<div class="overflow-hidden h-16">
-		<a href="/" class="relative bottom-16">
-			{#if $theme == 'dark'}
-				<img
-					src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logoblack_c9ft73.webp"
-					alt="Logo"
-					class="mr-2"
-				/>
-			{:else}
-				<img
-					class="logo"
-					src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.webp"
-					alt="Logo"
-				/>
-			{/if}
-		</a>
+	<div class="overflow-hidden">
+		<Logo />
 	</div>
 
 	<!-- Toggle Button -->
@@ -154,29 +141,15 @@
 		class="absolute top-0 h-screen w-full right-full transition-all duration-500
         bg-white dark:bg-black overflow-hidden"
 	>
-		<div class="absolute grid grid-cols-3 w-full place-items-center">
+		<div class="absolute top-0 left-0 right-0 grid grid-cols-3 w-full place-items-center h-28 px-4">
 			<!-- Logo -->
-			<div class=" col-start-2 col-end-3 logo-wrapper">
-				<a href="/" class="inline-block">
-					{#if $theme == 'dark'}
-						<img
-							src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logoblack_c9ft73.webp"
-							alt="Logo"
-							class="mr-2"
-						/>
-					{:else}
-						<img
-							class="logo"
-							src="https://res.cloudinary.com/blackgandalf/image/upload/v1646855082/GWC/logos/logowhite_yxvnpv.webp"
-							alt="Logo"
-						/>
-					{/if}
-				</a>
+			<div class="col-start-2 col-end-3 logo-wrapper flex justify-center">
+				<Logo />
 			</div>
 
 			<!-- Toggle Button -->
 			<button
-				class="col-start-3 col-end-4 opacity-50 ml-8 p-2 border border-accent2 rounded-md"
+				class="col-start-3 col-end-4 opacity-50 p-2 border border-accent2 rounded-md justify-self-end"
 				id="nav_close"
 				><svg
 					class="pointer-events-none"
@@ -198,20 +171,20 @@
 
 		<!-- Menu Items + Social -->
 		<div class="text-4xl font-thin text-center h-full">
-			<div class="flex flex-col items-center justify-center gap-y-12 mt-40">
+			<div class="flex flex-col items-center justify-center gap-y-12 mt-24">
 				<!-- Menu Item -->
 				<div class="inline-block relative">
 					<li class="relative z-10 text-4xl font-light dark:text-white">
 						<a href="/about" class="inline-block h-full w-full">About</a>
 					</li>
-					<div class="absolute bottom-0 h-2 w-full bg-accent dark:bg-orange-accent"></div>
+					<div class="absolute bottom-0 h-2 w-full bg-accent"></div>
 				</div>
 				<!-- Menu Item -->
 				<div class="inline-block relative">
 					<li class="relative z-10 text-4xl font-light dark:text-white">
 						<a href="/projects" class="inline-block h-full w-full">Projects</a>
 					</li>
-					<div class="absolute bottom-0 h-2 w-full bg-accent dark:bg-orange-accent"></div>
+					<div class="absolute bottom-0 h-2 w-full bg-accent"></div>
 				</div>
 
 				<!-- Menu Item -->
@@ -219,7 +192,7 @@
 					<li class="relative z-10 text-4xl font-light dark:text-white">
 						<a href="/services" class="inline-block h-full w-full">Services</a>
 					</li>
-					<div class="absolute bottom-0 h-2 w-full bg-accent dark:bg-orange-accent"></div>
+					<div class="absolute bottom-0 h-2 w-full bg-accent"></div>
 				</div>
 
 				<!-- Menu Item -->
@@ -227,7 +200,7 @@
 					<li class="relative z-10 text-4xl font-light dark:text-white">
 						<a href="/contact" class="inline-block h-full w-full">Contact</a>
 					</li>
-					<div class="absolute bottom-0 h-2 w-full bg-accent dark:bg-orange-accent"></div>
+					<div class="absolute bottom-0 h-2 w-full bg-accent"></div>
 				</div>
 
 				<!-- Menu Item -->
@@ -235,7 +208,7 @@
 					<li class="relative z-10 text-4xl font-light dark:text-white">
 						<a href="/blog" class="inline-block h-full w-full">Blog</a>
 					</li>
-					<div class="absolute bottom-0 h-2 w-full bg-accent dark:bg-orange-accent"></div>
+					<div class="absolute bottom-0 h-2 w-full bg-accent"></div>
 				</div>
 			</div>
 
