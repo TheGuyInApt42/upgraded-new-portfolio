@@ -118,10 +118,7 @@
 							Email Address
 						</span>
 						<span class="mt-1 block text-base font-semibold text-slate-900 dark:text-white">
-							<a
-								href="mailto:{info.email}"
-								class="hover:underline focus:underline focus:outline-none">{info.email}</a
-							>
+							<span>{info.email}</span>
 						</span>
 					</div>
 				</div>

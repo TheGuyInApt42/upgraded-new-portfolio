@@ -175,10 +175,7 @@
 						<div>
 							<dt class="text-sm text-green-200">Email</dt>
 							<dd class="font-medium">
-								<a
-									href="mailto:{info.email}"
-									class="hover:underline focus:underline focus:outline-none">{info.email}</a
-								>
+								<span class="hover:underline focus:underline focus:outline-none">{info.email}</span>
 							</dd>
 						</div>
 					</div>
