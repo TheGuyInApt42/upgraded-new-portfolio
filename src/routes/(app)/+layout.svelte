@@ -92,7 +92,7 @@
 		/>
 	</Headroom>
 
-	<MobileNav />
+	<MobileNav {navLinks} />
 
 	<!--
     <DesktopNav/>
