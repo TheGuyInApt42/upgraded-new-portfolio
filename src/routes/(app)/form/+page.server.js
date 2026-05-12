@@ -1,25 +1,25 @@
+import { fail } from '@sveltejs/kit';
+import { GOOGLE_APPS_SCRIPT_URL } from '$env/static/private';
+
 export const actions = {
 	sendForm: async ({ request }) => {
 		const formData = await request.formData();
+		const data = Object.fromEntries(formData); // Converts FormData to { name: '...', email: '...' }
 
 		try {
-			const response = await fetch('https://forminit.com/f/66705066-7c22-49c2-9059-0f2a80bc9789', {
+			const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
 				method: 'POST',
-				body: formData,
+				body: JSON.stringify(data), // Sending as JSON
 				headers: {
-					Accept: 'application/json'
+					'Content-Type': 'application/json'
 				}
 			});
 
-			if (!response.ok) {
-				return fail(response.status, { message: 'Network response was not ok' });
-			}
-
-			// Optional: return success to the UI
-			return { success: true };
+			const result = await response.json();
+			return { success: true, result };
 		} catch (error) {
-			console.error('Form submission error:', error);
-			return fail(500, { message: 'Could not send form.' });
+			console.error(error);
+			return fail(500, { message: 'Failed to send.', error });
 		}
 	}
 };

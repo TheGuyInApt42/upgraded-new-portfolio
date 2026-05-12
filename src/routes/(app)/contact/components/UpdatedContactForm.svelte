@@ -40,7 +40,11 @@
 		window.dataLayer.push({
 			event: 'contact_form_submission',
 			service_interest: formData.get('service_interest'),
-			budget_range: formData.get('budget_range')
+			budget_range: formData.get('budget_range'),
+			message: formData.get('message'),
+			name: formData.get('name'),
+			email: formData.get('email'),
+			website: formData.get('website')
 		});
 
 		setTimeout(() => goto('/success'), 300);

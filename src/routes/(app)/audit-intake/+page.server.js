@@ -1,11 +1,8 @@
 import { fail, redirect } from '@sveltejs/kit';
 import Stripe from 'stripe';
 import { STRIPE_SECRET_KEY } from '$env/static/private';
-
+import { GOOGLE_APPS_SCRIPT_URL } from '$env/static/private';
 const stripe = new Stripe(STRIPE_SECRET_KEY);
-
-const GOOGLE_APPS_SCRIPT_URL =
-	'https://script.google.com/macros/s/AKfycbwoPk85ladSNis7GhgBXONQGwHTQRa5RwWL0OEFB_iuZkDtRJw5fJTN4ppTZRZPDkbK/exec';
 
 // Load customer info when page loads
 export async function load({ url }) {
@@ -35,7 +32,6 @@ export async function load({ url }) {
 
 export const actions = {
 	default: async ({ request }) => {
-		console.log('Using URL:', GOOGLE_APPS_SCRIPT_URL);
 		const formData = await request.formData();
 		const payload = {
 			name: formData.get('name'),
@@ -58,6 +54,7 @@ export const actions = {
 				body: JSON.stringify(payload)
 			});
 
+			const result = await response.json();
 			return { success: true, message: 'Form submitted successfully!' };
 		} catch (error) {
 			console.error('Error submitting form:', error);
