@@ -194,7 +194,7 @@
 					class="space-y-4"
 					action="/form?/sendForm"
 					use:form
-					on:submit|preventDefault={handleForm}
+					onsubmit={handleForm}
 				>
 					<p class="hidden">
 						<label
