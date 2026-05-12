@@ -20,7 +20,7 @@
 		robots: 'index,follow',
 		openGraph: {
 			...metaData.openGraph,
-			url: `${BASE_URL}${metaData.url}/`,
+			url: `${BASE_URL}${metaData.url}`,
 			title: metaData.title,
 			description: metaData.description,
 			locale: 'en_US'
@@ -36,29 +36,32 @@
 		`<${'script'} type="application/ld+json">${JSON.stringify(content)}</${'script'}>`;
 
 	$: {
-		if (!!metaData.image && typeof metaData.image === 'string') {
+		const imageUrl = typeof metaData.image === 'string' ? metaData.image : metaData.image?.url;
+
+		if (imageUrl) {
 			metaData.openGraph = {
 				...metaData.openGraph,
-				image: `${BASE_URL}${metaData.image}`
+				image: `${BASE_URL}${imageUrl}`
 			};
+
 			metaData.twitter = {
 				...metaData.twitter,
-				image: `${BASE_URL}${metaData.image}`
+				image: `${BASE_URL}${imageUrl}`
 			};
-		}
-		if (typeof metaData.image === 'object') {
-			metaData.openGraph = {
-				...metaData.openGraph,
-				image: `${BASE_URL}${metaData.image}`,
-				'image:width': metaData.image.width,
-				'image:height': metaData.image.height,
-				'image:alt': metaData.image.alt || metaData.title
-			};
-			metaData.twitter = {
-				...metaData.twitter,
-				image: `${BASE_URL}${metaData.image}`,
-				'image:alt': metaData.image.alt || metaData.title
-			};
+
+			if (typeof metaData.image === 'object') {
+				metaData.openGraph = {
+					...metaData.openGraph,
+					'image:width': metaData.image.width,
+					'image:height': metaData.image.height,
+					'image:alt': metaData.image.alt || metaData.title
+				};
+
+				metaData.twitter = {
+					...metaData.twitter,
+					'image:alt': metaData.image.alt || metaData.title
+				};
+			}
 		}
 	}
 
@@ -83,7 +86,7 @@
 	{/if}
 
 	{#if metaData && metaData.url && BASE_URL}
-		<link rel="canonical" href={`${BASE_URL}${metaData.url}/`} />
+		<link rel="canonical" href={`${BASE_URL}${metaData.url}`} />
 	{/if}
 
 	{#if metaData && metaData.twitter}
@@ -116,7 +119,7 @@
 		{@html jsonLd({
 			'@context': 'https://schema.org',
 			'@type': 'Organization',
-			url: metaData.url,
+			url: `${BASE_URL}${metaData.url}`,
 			logo: `${BASE_URL}/favicon.ico`
 		})}
 	{/if}
@@ -125,7 +128,7 @@
 		{@html jsonLd({
 			'@context': 'https://schema.org',
 			'@type': 'WebSite',
-			url: metaData.url,
+			url: `${BASE_URL}${metaData.url}`,
 			potentialAction: {
 				'@type': 'SearchAction',
 				target: metaData.searchUrl,
