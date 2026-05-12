@@ -24,7 +24,7 @@ const config = {
 				persist: false
 			}
 		}),
-		trailingSlash: 'never',
+
 		alias: {
 			'@components': './src/lib/components',
 			'@stores': './src/stores'
