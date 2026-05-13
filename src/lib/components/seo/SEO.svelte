@@ -41,12 +41,12 @@
 		if (imageUrl) {
 			metaData.openGraph = {
 				...metaData.openGraph,
-				image: `${BASE_URL}${imageUrl}`
+				image: withBaseUrl(imageUrl)
 			};
 
 			metaData.twitter = {
 				...metaData.twitter,
-				image: `${BASE_URL}${imageUrl}`
+				image: withBaseUrl(imageUrl)
 			};
 
 			if (typeof metaData.image === 'object') {
@@ -66,6 +66,8 @@
 	}
 
 	const isProd = environment.production;
+	const isAbsoluteUrl = (url) => /^https?:\/\//.test(url);
+	const withBaseUrl = (url) => (isAbsoluteUrl(url) ? url : `${BASE_URL}${url}`);
 </script>
 
 <svelte:head>

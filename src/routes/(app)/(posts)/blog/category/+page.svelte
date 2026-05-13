@@ -25,6 +25,10 @@
 <HeadTags {metaData} />
 <!-- End: Header Tag -->
 
+<svelte:head>
+	<meta name="robots" content="noindex,follow" />
+</svelte:head>
+
 <main>
 	<!-- Hero Section -->
 	<section

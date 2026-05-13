@@ -28,24 +28,20 @@
 		title: `${title} | GWC Blog`,
 		description: excerpt,
 		keywords: categories || [],
-		url: `/blog/${data.meta.slug}`
+		url: `/blog/${data.meta.slug}`,
+		openGraph: {
+			type: 'article'
+		},
+		image: coverImage
+			? {
+					url: coverImage,
+					width: coverWidth,
+					height: coverHeight,
+					alt: title
+				}
+			: null
 	};
 </script>
-
-<svelte:head>
-	<title>{title}</title>
-	<meta data-key="description" name="description" content={excerpt} />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content={title} />
-	<meta name="twitter:title" content={title} />
-	<meta property="og:description" content={excerpt} />
-	<meta name="twitter:description" content={excerpt} />
-	{#if coverImage}
-		<meta property="og:image" content={coverImage} />
-	{/if}
-	<meta property="og:image:width" content={coverWidth} />
-	<meta property="og:image:height" content={coverHeight} />
-</svelte:head>
 
 <HeadTags {metaData} />
 
