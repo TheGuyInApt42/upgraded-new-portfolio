@@ -98,10 +98,33 @@ export const defaultServices = [
 
 export const projects = [
 	{
+		title: 'B Sharp Hair Art',
+		slug: 'b-sharp-hair-art',
+		description: `I redesigned this website for a local barber shop along with implementing a custom
+		booking system.`,
+		tools: 'Sveltekit, Tailwind, ClickSend',
+		url: 'https://bsharphairart.com',
+		img: {
+			default:
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1782692990/GWC/projects/Image_6-28-26_at_8.28_PM_kyupyz.png',
+			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1782692990/GWC/projects/Image_6-28-26_at_8.28_PM_kyupyz.webp',
+			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1782692990/GWC/projects/Image_6-28-26_at_8.28_PM_kyupyz.jpg'
+		},
+		work: 'Web Design + Web Development + ClickSend Integration',
+		type: 'Small Business',
+		problem: `B Sharp Hair Art needed to update their website to showcase their services 
+			and attract more customers as well as provide a way for customers to schedule appointments.`,
+		solution:
+			'Redesigned their website using Sveltekit and Tailwind, as well as implemented a custom booking system and admin portal.',
+		result: `Created a fast, maintainable website that effectively showcases their services and 
+			allows for customers to schedule appointments.`
+	},
+	{
 		title: 'Ozzie Auto Body',
 		slug: 'ozzie-auto-body',
-		description: `I designed and developed this website for a local auto body shop.`,
-		tools: 'Sveltekit, Tailwind',
+		description: `I designed and developed this website for a local auto body shop, as well as implementing a custom
+		booking system and admin portal.`,
+		tools: 'Sveltekit, Tailwind, ClickSend',
 		url: 'https://ozzieautobody.com',
 		img: {
 			default:
@@ -109,7 +132,7 @@ export const projects = [
 			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1777990763/GWC/projects/Image_5-5-26_at_10.16_AM_xwmwht.webp',
 			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1777990763/GWC/projects/Image_5-5-26_at_10.16_AM_xwmwht.jpg'
 		},
-		work: 'Web Design + Web Development + Hosting',
+		work: 'Web Design + Web Development + Hosting + ClickSend Integration',
 		type: 'Small Business',
 		problem: `Ozzie Auto Body needed a modern, fast website to showcase their services 
 			and attract more customers as well as provide a way for customers to get estimates 
