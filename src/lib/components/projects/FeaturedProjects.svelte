@@ -38,7 +38,7 @@
 		<div>
 			<section class="projects justify-between lg:grid lg:grid-cols-3 flex flex-col items-center">
 				{#if featuredProjects.length > 0}
-					{#each featuredProjects as project}
+					{#each featuredProjects as project (project.slug)}
 						<HomeProjectCard
 							heading={project.title}
 							tools={project.tools}
@@ -52,6 +52,8 @@
 							skills={project.work}
 							type={project.type}
 							slug={project.slug}
+							webmUrl={project.webmUrl}
+							mp4Url={project.mp4Url}
 						/>
 					{/each}
 				{/if}

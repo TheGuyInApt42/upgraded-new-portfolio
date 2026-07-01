@@ -5,6 +5,19 @@
  * PLEASE BE SURE TO UPDATE THEM ALL! Thank you!
  **/
 
+import bsharpWebm from '$lib/assets/videos/bsharp.webm';
+import bsharpMp4 from '$lib/assets/videos/bsharp.mp4';
+import ozzieWebm from '$lib/assets/videos/ozzie.webm';
+import ozzieMp4 from '$lib/assets/videos/ozzie.mp4';
+import playWebm from '$lib/assets/videos/play.webm';
+import playMp4 from '$lib/assets/videos/play.mp4';
+import bethlehemWebm from '$lib/assets/videos/bethlehem.webm';
+import bethlehemMp4 from '$lib/assets/videos/bethlehem.mp4';
+import whiterockWebm from '$lib/assets/videos/whiterock.webm';
+import whiterockMp4 from '$lib/assets/videos/whiterock.mp4';
+import ralphWebm from '$lib/assets/videos/ralph.webm';
+import ralphMp4 from '$lib/assets/videos/ralph.mp4';
+
 export const siteTitle = 'My Awesome Blog';
 export const siteDescription = 'Built with the SvelteKit Static Blog Starter';
 export const siteURL = 'example.com';
@@ -117,7 +130,9 @@ export const projects = [
 		solution:
 			'Redesigned their website using Sveltekit and Tailwind, as well as implemented a custom booking system and admin portal.',
 		result: `Created a fast, maintainable website that effectively showcases their services and 
-			allows for customers to schedule appointments.`
+			allows for customers to schedule appointments.`,
+		webmUrl: bsharpWebm,
+		mp4Url: bsharpMp4
 	},
 	{
 		title: 'Ozzie Auto Body',
@@ -141,7 +156,9 @@ export const projects = [
 			'Built a modern, fast website using Sveltekit and Tailwind that highlights their services and makes it easy for customers to find them.',
 		result: `Created a fast, maintainable website that effectively showcases their services and 
 			allows for customers to get estimates and schedule appointments. The website is also optimized for 
-			search engines and social media.`
+			search engines and social media.`,
+		webmUrl: ozzieWebm,
+		mp4Url: ozzieMp4
 	},
 
 	{
@@ -163,7 +180,34 @@ export const projects = [
 		solution:
 			'Developed a vibrant, engaging website using SvelteKit and Tailwind that highlights their game inventory, creates an appealing brand presence, and makes it easy for customers to find what they need.',
 		result: `The website increased online traffic with average sessions of 100+and helped the store establish a stronger digital presence, 
-			attracting more local gaming customers and improving brand recognition.`
+			attracting more local gaming customers and improving brand recognition.`,
+		webmUrl: playWebm,
+		mp4Url: playMp4
+	},
+	{
+		title: 'Bethlehem Apostolic Church',
+		slug: 'bethlehem-apostolic-faith-church',
+		description: `I designed and developed this website for a local church.`,
+		tools: 'Sveltekit, Tailwind, Stripe Payments',
+		url: 'https://bethlehemapostolic.org',
+		img: {
+			default:
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1782917925/GWC/projects/bethlehem_lhahtk.png',
+			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1782917925/GWC/projects/bethlehem_lhahtk.webp',
+			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1782917925/GWC/projects/bethlehem_lhahtk.jpg'
+		},
+		work: 'Web Design + Web Development + Hosting + Stripe Payments',
+		type: 'Church',
+		problem: `Bethlehem Apostolic Church needed a website to showcase their services 
+			and provide a way for visitors to find them and learn more about their church, as well as a provide a way 
+			for visitors to contact them, request prayer, or give donations.`,
+		solution: `Built a website using Sveltekit and Tailwind that highlights their services and makes it easy for 
+			customers to find them and using Stripe Payments to allow visitors to donate to the church.`,
+		result: `Created a website that effectively showcases their services and 
+			allows for visitors to find them and learn more about their church, as well as a provide a way 
+			for visitors to contact them, request prayer, or give donations.`,
+		webmUrl: bethlehemWebm,
+		mp4Url: bethlehemMp4
 	},
 	{
 		title: 'The Skincare Bakery',
@@ -199,6 +243,8 @@ export const projects = [
 			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.webp',
 			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.jpg'
 		},
+		webmUrl: whiterockWebm,
+		mp4Url: whiterockMp4,
 		work: 'Web Design + Web Development + Hosting',
 		type: 'Small Business',
 		problem:
@@ -221,6 +267,8 @@ export const projects = [
 			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
 			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.jpg'
 		},
+		webmUrl: ralphWebm,
+		mp4Url: ralphMp4,
 		work: 'Web Design + Web Development + Hosting',
 		type: 'Personal',
 		problem:

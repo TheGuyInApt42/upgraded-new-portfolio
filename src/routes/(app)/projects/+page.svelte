@@ -102,12 +102,19 @@
 				>
 					<span class="text-lg opacity-75"> Small Business </span>
 				</button>
+				<button
+					class={projectFilterBtnStyle}
+					class:active={clickedType === 'Church'}
+					on:click={filterProjects}
+				>
+					<span class="text-lg opacity-75"> Church </span>
+				</button>
 			</div>
 
 			<!-- Projects Grid -->
 			<div class="projects justify-between lg:grid lg:grid-cols-3 flex flex-col items-center">
 				{#if projects.length > 0}
-					{#each filteredProjects as project}
+					{#each filteredProjects as project (project.slug)}
 						<HomeProjectCard
 							heading={project.title}
 							tools={project.tools}
@@ -117,6 +124,8 @@
 							skills={project.work}
 							type={project.type}
 							slug={project.slug}
+							webmUrl={project.webmUrl}
+							mp4Url={project.mp4Url}
 						/>
 					{/each}
 				{/if}
