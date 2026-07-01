@@ -5,19 +5,6 @@
  * PLEASE BE SURE TO UPDATE THEM ALL! Thank you!
  **/
 
-import bsharpWebm from '$lib/assets/videos/bsharp.webm';
-import bsharpMp4 from '$lib/assets/videos/bsharp.mp4';
-import ozzieWebm from '$lib/assets/videos/ozzie.webm';
-import ozzieMp4 from '$lib/assets/videos/ozzie.mp4';
-import playWebm from '$lib/assets/videos/play.webm';
-import playMp4 from '$lib/assets/videos/play.mp4';
-import bethlehemWebm from '$lib/assets/videos/bethlehem.webm';
-import bethlehemMp4 from '$lib/assets/videos/bethlehem.mp4';
-import whiterockWebm from '$lib/assets/videos/whiterock.webm';
-import whiterockMp4 from '$lib/assets/videos/whiterock.mp4';
-import ralphWebm from '$lib/assets/videos/ralph.webm';
-import ralphMp4 from '$lib/assets/videos/ralph.mp4';
-
 export const siteTitle = 'My Awesome Blog';
 export const siteDescription = 'Built with the SvelteKit Static Blog Starter';
 export const siteURL = 'example.com';
@@ -131,8 +118,8 @@ export const projects = [
 			'Redesigned their website using Sveltekit and Tailwind, as well as implemented a custom booking system and admin portal.',
 		result: `Created a fast, maintainable website that effectively showcases their services and 
 			allows for customers to schedule appointments.`,
-		webmUrl: bsharpWebm,
-		mp4Url: bsharpMp4
+		webmUrl: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919353/bsharp_wlvvv6.webm',
+		mp4Url: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919352/bsharp_lcf6x9.mp4'
 	},
 	{
 		title: 'Ozzie Auto Body',
@@ -157,8 +144,8 @@ export const projects = [
 		result: `Created a fast, maintainable website that effectively showcases their services and 
 			allows for customers to get estimates and schedule appointments. The website is also optimized for 
 			search engines and social media.`,
-		webmUrl: ozzieWebm,
-		mp4Url: ozzieMp4
+		webmUrl: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919354/ozzie_xdi5vk.webm',
+		mp4Url: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919353/ozzie_zcdqmd.mp4'
 	},
 
 	{
@@ -181,8 +168,8 @@ export const projects = [
 			'Developed a vibrant, engaging website using SvelteKit and Tailwind that highlights their game inventory, creates an appealing brand presence, and makes it easy for customers to find what they need.',
 		result: `The website increased online traffic with average sessions of 100+and helped the store establish a stronger digital presence, 
 			attracting more local gaming customers and improving brand recognition.`,
-		webmUrl: playWebm,
-		mp4Url: playMp4
+		webmUrl: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919350/play_cqpwmf.webm',
+		mp4Url: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919349/play_mexfid.mp4'
 	},
 	{
 		title: 'Bethlehem Apostolic Church',
@@ -206,8 +193,9 @@ export const projects = [
 		result: `Created a website that effectively showcases their services and 
 			allows for visitors to find them and learn more about their church, as well as a provide a way 
 			for visitors to contact them, request prayer, or give donations.`,
-		webmUrl: bethlehemWebm,
-		mp4Url: bethlehemMp4
+		webmUrl:
+			'https://res.cloudinary.com/blackgandalf/video/upload/v1782919348/bethlehem_ujlpmv.webm',
+		mp4Url: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919348/bethlehem_blbgl8.mp4'
 	},
 	{
 		title: 'The Skincare Bakery',
@@ -243,8 +231,9 @@ export const projects = [
 			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.webp',
 			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/whiterocknc.com_czlma8.jpg'
 		},
-		webmUrl: whiterockWebm,
-		mp4Url: whiterockMp4,
+		webmUrl:
+			'https://res.cloudinary.com/blackgandalf/video/upload/v1782919352/whiterock_vnjrhw.webm',
+		mp4Url: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919351/whiterock_m0xfmo.mp4',
 		work: 'Web Design + Web Development + Hosting',
 		type: 'Small Business',
 		problem:
@@ -267,8 +256,8 @@ export const projects = [
 			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.webp',
 			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1646855276/GWC/projects/ralphjgorham.com_ay13rt.jpg'
 		},
-		webmUrl: ralphWebm,
-		mp4Url: ralphMp4,
+		webmUrl: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919351/ralph_swxqbq.webm',
+		mp4Url: 'https://res.cloudinary.com/blackgandalf/video/upload/v1782919350/ralph_ew8cck.mp4',
 		work: 'Web Design + Web Development + Hosting',
 		type: 'Personal',
 		problem:
