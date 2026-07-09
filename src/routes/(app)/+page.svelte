@@ -26,16 +26,42 @@
 	 * @type {IMetaTagProperties}
 	 */
 	const metaData = {
-		title: `Small Business Web Design | Gorham Web Consulting`,
+		title: 'Small Business Web Design | Gorham Web Consulting',
 		description:
 			'Small business web design by Gorham Web Consulting. We build modern, responsive websites that help you attract more customers and grow.',
 		keywords: [
-			'Ralph Gorham',
 			'website development',
 			'small business website development',
 			'custom websites',
 			'website design',
 			'mobile app development'
+		],
+		image: {
+			url: '/og-image.png',
+			width: 1200,
+			height: 630,
+			alt: 'Gorham Web Consulting'
+		},
+		schema: [
+			{
+				'@context': 'https://schema.org',
+				'@type': 'ProfessionalService',
+				name: 'Gorham Web Consulting',
+				description:
+					'Small business web design by Gorham Web Consulting. We build modern, responsive websites that help you attract more customers and grow.',
+				areaServed: 'Westchester County, NY',
+				telephone: '(914) 419-4033',
+				email: 'jarrod@gorhamwebconsulting.com',
+				sameAs: [
+					'https://www.facebook.com/gorhamwebconsulting',
+					'https://www.instagram.com/gorhamwebconsulting'
+				]
+			},
+			{
+				'@context': 'https://schema.org',
+				'@type': 'WebSite',
+				name: 'Gorham Web Consulting'
+			}
 		]
 	};
 

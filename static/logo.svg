@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100">
+  <text
+    x="10"
+    y="68"
+    font-family="Raleway, Arial, sans-serif"
+    font-size="60"
+    font-weight="900"
+    fill="#111827">
+    GWC
+  </text>
+
+  <circle
+    cx="220"
+    cy="60"
+    r="10"
+    fill="#0d9488"/>
+</svg>

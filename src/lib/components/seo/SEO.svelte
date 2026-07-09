@@ -87,10 +87,6 @@
 		<meta name="keywords" content={metaData.keywords.join(', ')} />
 	{/if}
 
-	{#if metaData && metaData.url && BASE_URL}
-		<link rel="canonical" href={`${BASE_URL}${metaData.url}`} />
-	{/if}
-
 	{#if metaData && metaData.twitter}
 		<meta name="twitter:card" content="summary_large_image" />
 
@@ -117,25 +113,14 @@
 		{/each}
 	{/if}
 
-	{#if metaData && metaData.url}
-		{@html jsonLd({
-			'@context': 'https://schema.org',
-			'@type': 'Organization',
-			url: `${BASE_URL}${metaData.url}`,
-			logo: `${BASE_URL}/favicon.ico`
-		})}
-	{/if}
-
-	{#if metaData && metaData.url && metaData.searchUrl}
-		{@html jsonLd({
-			'@context': 'https://schema.org',
-			'@type': 'WebSite',
-			url: `${BASE_URL}${metaData.url}`,
-			potentialAction: {
-				'@type': 'SearchAction',
-				target: metaData.searchUrl,
-				'query-input': 'required name=search_term_string'
-			}
-		})}
+	{#if metaData.schema}
+		{#each metaData.schema as item}
+			{@html jsonLd({
+				...item,
+				url: item.url ?? BASE_URL,
+				logo: item.logo ?? `${BASE_URL}/logo.svg`,
+				image: item.image ?? `${BASE_URL}/logo.svg`
+			})}
+		{/each}
 	{/if}
 </svelte:head>
