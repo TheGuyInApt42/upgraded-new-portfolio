@@ -2,6 +2,7 @@
 	// Start: Local Imports
 	import { onNavigate } from '$app/navigation';
 	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
 
 	// Start: External Imports
 
@@ -77,6 +78,10 @@
 
 	// End: Local component methods
 </script>
+
+<svelte:head>
+	<link rel="canonical" href={`https://gorhamwebconsulting.com${$page.url.pathname}`} />
+</svelte:head>
 
 <div class="bg-white dark:bg-black flex flex-col min-h-screen">
 	<!-- Start: Header Navigation -->

@@ -26,15 +26,16 @@
 	 * @type {IMetaTagProperties}
 	 */
 	const metaData = {
-		title: `Gorham Web Consulting`,
+		title: `Small Business Web Design | Gorham Web Consulting`,
 		description:
-			'Boost your small business with our expert web design services! At Gorham Web Consulting, we specialize in creating stunning, user-friendly websites tailored to meet the unique needs of small businesses. From eye-catching designs to seamless functionality, we help you establish a strong online presence, attract more customers, and grow your brand. Let us transform your vision into a powerful digital experience that drives results. Get started today!',
+			'Small business web design by Gorham Web Consulting. We build modern, responsive websites that help you attract more customers and grow.',
 		keywords: [
 			'Ralph Gorham',
 			'website development',
 			'small business website development',
 			'custom websites',
-			'website design'
+			'website design',
+			'mobile app development'
 		]
 	};
 
