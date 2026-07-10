@@ -68,6 +68,32 @@
 	const isProd = environment.production;
 	const isAbsoluteUrl = (url) => /^https?:\/\//.test(url);
 	const withBaseUrl = (url) => (isAbsoluteUrl(url) ? url : `${BASE_URL}${url}`);
+
+	const defaultSchema = [
+		{
+			'@context': 'https://schema.org',
+			'@type': 'ProfessionalService',
+			name: 'Gorham Web Consulting',
+			url: BASE_URL,
+			logo: `${BASE_URL}/logo.svg`,
+			image: `${BASE_URL}/logo.svg`,
+			description:
+				'Small business web design by Gorham Web Consulting. We build modern, responsive websites that help you attract more customers and grow.',
+			areaServed: 'Westchester County, NY',
+			telephone: '(914) 419-4033',
+			email: 'jarrod@gorhamwebconsulting.com',
+			sameAs: [
+				'https://www.facebook.com/gorhamwebconsulting',
+				'https://www.instagram.com/gorhamwebconsulting'
+			]
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'WebSite',
+			name: 'Gorham Web Consulting',
+			url: BASE_URL
+		}
+	];
 </script>
 
 <svelte:head>
@@ -114,7 +140,7 @@
 	{/if}
 
 	{#if metaData.schema}
-		{#each metaData.schema as item}
+		{#each [...defaultSchema, ...(metaData.schema ?? [])] as item}
 			{@html jsonLd({
 				...item,
 				url: item.url ?? BASE_URL,

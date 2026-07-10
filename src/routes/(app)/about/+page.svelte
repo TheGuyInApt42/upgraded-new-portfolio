@@ -9,11 +9,23 @@
 	 * @type {IMetaTagProperties}
 	 */
 	const metaData = {
-		title: 'About Ralph Gorham | GWC',
-		description: 'Meet the developer behind Gorham Web Consulting',
-		url: '/about',
-		keywords: ['about', 'bio', 'gorham web consulting', 'web developer mount vernon'],
-		searchUrl: '/about'
+		title: 'About Ralph Gorham | Gorham Web Consulting',
+		description:
+			'Meet Ralph Gorham, the developer behind Gorham Web Consulting and learn how I help small businesses succeed online.',
+
+		keywords: [
+			'Ralph Gorham',
+			'About Gorham Web Consulting',
+			'Web Developer',
+			'Small Business Web Design'
+		],
+
+		image: {
+			url: '/og-image.png',
+			width: 1200,
+			height: 630,
+			alt: 'Gorham Web Consulting'
+		}
 	};
 
 	// Placeholder image path - replace with your actual photo path
