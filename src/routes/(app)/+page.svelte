@@ -17,8 +17,11 @@
 	import FeaturedProjects from '@components/projects/FeaturedProjects.svelte';
 	import BlogSection from '@components/blog/BlogSection.svelte';
 	import HeroTwoPath from '@components/hero-section/HeroTwoPath.svelte';
+	import Testimonial from '@components/testimonial/Testimonial.svelte';
+	import Pricing from '@components/pricing/Pricing.svelte';
 
 	// End: Local Imports
+	import { testimonials } from '$lib/data/testimonials';
 
 	// Exports
 	// Start: Local component properties
@@ -44,30 +47,6 @@
 		}
 	};
 
-	const testimonials = [
-		{
-			title: 'Sveltekit Starter',
-			mobile:
-				'Sveltekit starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable web application.',
-			feedback: 'https://github.com/navneetsharmaui/sveltekit-starter',
-			icon: ''
-		},
-		{
-			title: 'Sveltekit Blog',
-			mobile:
-				'Sveltekit Blog starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable web application and blog.',
-			feedback: 'https://github.com/navneetsharmaui/sveltekit-blog',
-			icon: ''
-		},
-		{
-			title: 'Sveltekit Blog',
-			mobile:
-				'Sveltekit Blog starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable web application and blog.',
-			feedback: 'lOrem adkfjipsi dpaisdfsadrum ipsum dorem da kfasdlkf',
-			icon: ''
-		}
-	];
-
 	// End: Local component properties
 
 	// Start: Local component methods
@@ -87,14 +66,11 @@
 <FeaturedProjects />
 
 <!-- Start: Testiomonail -->
-<!--
-    {#if testimonials.length > 0}
-		{#each testimonials as testimonial}
-			<Testimonial testimonial="{testimonial}" />
-		{/each}
-	{/if}
-    -->
+
+<Testimonial {testimonials} />
+
 <!-- End: Testimonials -->
+<Pricing />
 
 <BlogSection />
 

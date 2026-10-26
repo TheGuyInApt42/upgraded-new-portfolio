@@ -13,8 +13,8 @@
 			Stop leaving money on the table.
 		</h2>
 		<p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
-			Whether you need a quick fix or a completely new foundation, I have a plan that fits. Don't
-			let another customer go to your competitor.
+			Whether you need a quick fix or a completely new foundation, Gorham Web Consulting has a plan
+			that fits. Don't let another customer go to your competitor.
 		</p>
 
 		<div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">

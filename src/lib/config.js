@@ -65,7 +65,7 @@ export const defaultServices = [
 		highlight: 'Get Found by More Customers',
 		title: '',
 		description:
-			"We'll optimize your site so you show up on Google when people are searching for your services.",
+			'I will optimize your site so you show up on Google when people are searching for your services.',
 		icon: 'seo'
 	},
 	/* {
@@ -86,7 +86,7 @@ export const defaultServices = [
 		id: 'design',
 		highlight: 'A Design That Impresses Your Customers',
 		title: '',
-		description: "We'll create a design that looks and feels polished on every screen.",
+		description: 'I will create a design that looks and feels polished on every screen.',
 		icon: 'design'
 	}
 ];

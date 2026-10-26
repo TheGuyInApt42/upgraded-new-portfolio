@@ -2,7 +2,7 @@
 	import { iconLibrary } from '$lib/assets/js/iconLibrary.js';
 	import { defaultServices } from '$lib/config.js';
 
-	export let heading = "How We'll Grow Your Business";
+	export let heading = 'How Gorham Web Consulting Will Grow Your Business';
 	export let highlightWord = 'Grow';
 	export let subheading = 'Achieve new heights with the following services.';
 	export let services = defaultServices;

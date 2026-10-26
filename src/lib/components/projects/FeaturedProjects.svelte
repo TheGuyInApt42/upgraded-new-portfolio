@@ -30,7 +30,8 @@
 				Featured Projects
 			</h2>
 			<p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-white/70 md:text-lg">
-				See how we've helped small businesses grow with professional websites that drive results.
+				See how Gorham Web Consulting has helped small businesses grow with professional websites
+				that drive results.
 			</p>
 		</div>
 

@@ -1,10 +1,10 @@
 <script>
 	const heading = 'Is your website working for you, or against you?';
 	const subheading =
-		'We help local businesses fix underperforming sites and build new ones that actually attract clients.';
+		'Gorham Web Consulting helps local businesses fix underperforming sites and build new ones that actually attract clients.';
 	const question = 'Are You Ready to Grow?';
 	const description =
-		'We are an expert in developing custom websites for individuals and small businesses. Our goal is to grow your idea or your business.';
+		'Gorham Web Consulting is an expert in developing custom websites for individuals and small businesses. Our goal is to grow your idea or your business.';
 	const cta = 'Hire Me';
 	const image =
 		'https://res.cloudinary.com/blackgandalf/image/upload/v1646855416/GWC/me4_suwmyd.webp';
