@@ -1,37 +1,50 @@
 ---
 title: "How Much Does a Small Business Website Cost in 2026?"
 date: "2026-10-12"
-updated: "2026-10-12"
+updated: "2026-10-26"
 categories:
   - "small business"
   - "website costs"
 coverImage: "/images/posts/small-business-website-cost-cover.jpg"
 coverWidth: 16
 coverHeight: 9
-excerpt: "Real price ranges for small business websites in 2026 — DIY builders, template designers, and custom builds — plus what actually drives the cost and how to think about return on investment."
+excerpt: "Real price ranges for small business websites in 2026 — DIY builders, freelancers, agencies, and monthly plans — plus what actually drives the cost, what to ask before you pay anyone, and how to think about return on investment."
 ---
 
 <script>
     import { ExternalLink } from "@theguyinapt42/svelte-components"
+    import Pricing from "$lib/components/pricing/Pricing.svelte"
 </script>
 
 ## Why Website Pricing Feels Impossible to Pin Down
 
-Every local business owner asks this eventually — usually right after getting quotes ranging from $500 to $50,000. Both can be real numbers. Your website is your 24/7 storefront, and what you pay depends almost entirely on what you need it to do. Here's an honest breakdown of what websites actually cost in 2026.
+Every local business owner asks this eventually — usually right after getting quotes ranging from $500 to $15,000 for what sounds like the same thing. Your website is your 24/7 storefront, and what you pay depends on two things: what you need it to do, and who's building it. Here's an honest breakdown of what websites cost in 2026.
 
-## The Three Tiers of Business Websites
+## The Four Ways Most Businesses Get a Website
 
-### Tier 1: DIY Website Builders — $20–$60/month
+### DIY Website Builders — $20–$60/month
 
-Wix, Squarespace, GoDaddy. You're renting: you build it yourself on their templates, and the monthly fee never stops. Fine for a placeholder page with your hours and phone number. The ceiling hits fast — the moment you need real online booking, an estimate-request workflow, or anything custom, you're stuck within the template's walls.
+Wix, Squarespace, GoDaddy. You're renting a template and doing all the work yourself: the design, the writing, the updates, the troubleshooting. Fine for a placeholder page with your hours and phone number, but the ceiling hits fast — real online booking, an estimate-request workflow, or anything custom usually means paid add-ons or hitting the template's walls.
 
-### Tier 2: Template-Based Designers — $1,500–$5,000 One-Time
+### Template-Based Freelancers — Typically $1,500–$5,000 Upfront
 
-A freelancer installs a premium theme and customizes the colors, text, and images. It can look sharp, but you're sharing the same foundation as thousands of other sites, and speed and SEO are usually afterthoughts. You own the site, but you also own its limitations.
+A designer installs a premium theme and customizes the colors, text, and images. It can look sharp, but you're sharing the same foundation as thousands of other sites, and the theme drags along code you'll never use. Hosting and updates are usually extra, and once the project ends, you're on your own.
 
-### Tier 3: Custom-Built Sites — $5,000–$15,000+
+### Agencies — Typically $5,000–$15,000+ Upfront
 
-Designed and coded for one business. This is what I build. No shared theme, no bloat — just a fast site engineered around the thing that matters: turning visitors into bookings, calls, and estimate requests.
+A team designs and codes the site for your business. The work is usually solid, but you're paying for account managers, meetings, and overhead — and many small businesses simply don't need that much.
+
+### Monthly Website Plans — Typically $150–$400/month
+
+A newer option: instead of a big upfront bill, you pay one monthly price that covers the design, the build, hosting, and ongoing updates. Think of it like the difference between buying equipment outright and leasing it with service included. It's how I work.
+
+## How My Plans Work
+
+I build every site from my own lean, mobile-first foundation — no bloated theme, no agency overhead. You pay one monthly price, and I handle everything: building it, hosting it, keeping it secure, and making your small updates. When something needs changing, you text or email me, not a support queue.
+
+Plans start with a 12-month minimum. You always own your domain and your content, and after 24 months the site itself is fully yours. If you'd rather own it sooner, you can buy it out anytime.
+
+<Pricing heading="What I charge" sectionClass="py-12" />
 
 ## What Actually Moves the Price
 
@@ -43,24 +56,32 @@ For any appointment business — barbershops, salons, auto shops — this is the
 
 ### Custom Workflows
 
-SMS reminders that cut no-shows. Estimate-request portals. Inventory displays. Anything that replaces phone tag or paperwork with a system that runs itself.
+Automated reminders that cut no-shows. Estimate-request forms. Online stores and inventory. Anything that replaces phone tag or paperwork with a system that runs itself.
 
 ### Speed and Mobile Experience
 
-A site that loads in 5 seconds instead of 1 quietly bleeds visitors every single day — and over 60% of local searches happen on phones. Most owners never see it happening because the lost customers simply never call.
+Most local searches happen on phones, and a site that takes five seconds to load instead of one quietly loses visitors every day. Most owners never notice, because the customers who give up simply never call.
 
 ### Ongoing Care
 
-Hosting, updates, small changes. Budget for it — typically $50–$150/month — or the site rots. A website is not a one-time purchase; it's an asset that needs maintenance like any other.
+Hosting, security updates, backups, small changes. Someone has to do it, or the site slowly breaks. With an upfront build, budget $50–$150/month for a care plan. With a monthly plan, it should already be included — check that it is.
+
+## Five Questions to Ask Before You Pay Anyone
+
+1. **Who owns the domain and content — and what happens if you leave?** Your domain should always be in your name. Get the exit terms in writing before you sign.
+2. **What's the real monthly cost?** Add up hosting, care, and any app or plugin fees, not just the headline price.
+3. **What does a small change cost?** Updating your hours or adding a service shouldn't mean a new invoice every time.
+4. **How fast does it load on a phone?** Ask to see a past project on your own phone, not on their laptop.
+5. **Who will I actually talk to?** The person who builds the site should be the person who answers your questions.
 
 ## Ask a Better Question Than "What Does It Cost?"
 
-"What should a website cost?" is the wrong question. Try this one instead: what's one new customer worth to you, and how many is your current setup losing?
+Try this instead: what's one new customer worth to you, and how many is your current setup losing?
 
-Run the math. If a haircut is $40 and your site brings two extra bookings a week, that's over $4,000 a year from a single feature. An auto body shop landing one extra $800 job a month from estimate requests covers a $10,000 site in a year. The site isn't an expense — it's the cheapest salesperson you'll ever hire, working 24/7.
+Run the math. If a haircut is $40 and online booking brings in two extra appointments a week, that's about $350 a month — more than a booking plan costs. An auto body shop that lands one extra $800 repair a month from its estimate form is earning back its plan three times over. A good website isn't an expense; it's the cheapest salesperson you'll ever hire, and it works 24/7.
 
-## Start With the Audit, Not a Rebuild
+## Not Sure What You Need? Start With the Audit
 
-Before spending five figures — or settling for a $30/month template — find out what's actually broken. The Gorham Web Consulting $299 site audit goes through your current site (or your top competitor's) and hands you a prioritized list: speed issues, mobile problems, missing booking paths, SEO gaps. You keep the report either way. Most owners are surprised how much business is leaking through cracks they'd never noticed.
+Before you rebuild — or settle for a $30/month template — find out what's actually broken. The Gorham Web Consulting $299 site audit goes through your current site (or your top competitor's) and gives you a prioritized list: speed issues, mobile problems, missing booking paths, SEO gaps. You keep the report either way, and if you sign up for a plan, the $299 is credited toward your first month.
 
-Want expert help building your website? Visit [Gorham Web Consulting](/) to see how I can build a website that helps your small business grow.
+Ready to talk it through? Visit [Gorham Web Consulting](/) to see how I can build a website that helps your small business grow.
