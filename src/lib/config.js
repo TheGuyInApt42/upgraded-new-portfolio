@@ -98,6 +98,35 @@ export const defaultServices = [
 
 export const projects = [
 	{
+		title: 'BestAround',
+		slug: 'bestaround',
+		description: `I designed and built this web app, which finds the best-rated places of any kind near you,
+		from tacos to barbershops, ranked by a custom scoring algorithm.`,
+		tools: 'SvelteKit, Tailwind, Cloudflare Pages, Cloudflare D1, Google Places API',
+		url: 'https://bestaround.app',
+		img: {
+			default:
+				'https://res.cloudinary.com/blackgandalf/image/upload/v1793474557/GWC/projects/Image_10-31-26_at_3.19_PM_siiq8d.png',
+			webp: 'https://res.cloudinary.com/blackgandalf/image/upload/v1793474557/GWC/projects/Image_10-31-26_at_3.19_PM_siiq8d.webp',
+			jpg: 'https://res.cloudinary.com/blackgandalf/image/upload/v1793474557/GWC/projects/Image_10-31-26_at_3.19_PM_siiq8d.jpg'
+		},
+		work: 'Product Design + Web Development + API Integration + Hosting',
+		type: 'Web App',
+		problem: `Map apps sort results by distance or show raw star ratings, so a place with a perfect
+			5.0 from three reviews can outrank a 4.7 with hundreds. Finding the genuinely best spot nearby
+			takes a lot of scrolling and second-guessing.`,
+		solution: `Built a fast, mobile-first web app with SvelteKit that pulls live data from the
+			Google Places API and ranks every result by a weighted score that balances star rating against
+			review count. Searches work by radius or by city, borough or ZIP code, with a Cloudflare D1
+			database for search stats and local "I'm a regular" votes, plus rate limiting to keep API costs in check.`,
+		result: `A live, installable web app that answers "what's the best ___ around here?" in seconds,
+			anywhere in the country, running on Cloudflare's edge network at minimal hosting cost.`,
+		webmUrl:
+			'https://res.cloudinary.com/blackgandalf/video/upload/v1793475152/GWC/projects/bestaround_miidta.webm',
+		mp4Url:
+			'https://res.cloudinary.com/blackgandalf/video/upload/v1793475152/GWC/projects/bestaround_miidta.mp4'
+	},
+	{
 		title: 'B Sharp Hair Art',
 		slug: 'b-sharp-hair-art',
 		description: `I redesigned this website for a local barber shop along with implementing a custom
