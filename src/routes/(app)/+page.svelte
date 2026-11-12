@@ -19,6 +19,7 @@
 	import HeroTwoPath from '@components/hero-section/HeroTwoPath.svelte';
 	import Testimonial from '@components/testimonial/Testimonial.svelte';
 	import Pricing from '@components/pricing/Pricing.svelte';
+	import PricingFaq from '@components/pricing/PricingFaq.svelte';
 
 	// End: Local Imports
 	import { testimonials } from '$lib/data/testimonials';
@@ -71,7 +72,7 @@
 
 <!-- End: Testimonials -->
 <Pricing />
-
+<PricingFaq />
 <BlogSection />
 
 <Prefooter />
