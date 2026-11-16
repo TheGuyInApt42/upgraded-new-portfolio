@@ -2,6 +2,7 @@ import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { saveLead } from '$lib/server/leads.js';
 import { gradeSite, buildReport, GraderError } from '$lib/grader/checks.js';
+import { cleanRef } from '$lib/utils/leadSource.js';
 
 // Form actions can't be prerendered.
 export const prerender = false;
@@ -24,10 +25,11 @@ export const actions = {
 		const data = await request.formData();
 		if (data.get('website')) return { stage: 'graded', bot: true }; // honeypot
 		const url = clean(data.get('url'), 300);
+		const ref = cleanRef(data.get('ref'));
 
 		try {
 			const findings = await gradeSite(url, { pagespeedKey: env.PAGESPEED_API_KEY });
-			return { stage: 'graded', findings };
+			return { stage: 'graded', findings, ref };
 		} catch (err) {
 			const message =
 				err instanceof GraderError ? err.message : 'Something went wrong checking that site. Please try again.';
@@ -44,6 +46,7 @@ export const actions = {
 		const name = clean(data.get('name'), 100);
 		const email = clean(data.get('email'), 200).toLowerCase();
 		const business = clean(data.get('business'), 150);
+		const ref = cleanRef(data.get('ref'));
 
 		let report;
 		try {
@@ -71,6 +74,7 @@ export const actions = {
 		// Same D1 leads table as the contact form.
 		await saveLead(platform, {
 			form_type: 'site-grader',
+			source: ref,
 			name,
 			email,
 			company: business || report.host,
@@ -86,7 +90,7 @@ export const actions = {
 			sendEmail({
 				to: env.GRADER_NOTIFY_EMAIL || OWNER_EMAIL,
 				subject: `New grader lead: ${report.host} (${report.grade})`,
-				html: ownerEmailHtml({ name, email, business, report }),
+				html: ownerEmailHtml({ name, email, business, report, ref }),
 				replyTo: { email, name }
 			}),
 			sendEmail({
@@ -174,17 +178,18 @@ function prospectEmailHtml({ name, report }) {
 <h3 style="margin:24px 0 8px">What to fix first</h3>
 ${issueList(report)}
 <p>This was the automated check. I'll also take a quick look at your site myself and follow up within 24 hours with what I'd fix first. If you have a question before then, just reply to this email.</p>
-<p>If you want the full picture, my <a href="${SITE}/website-audit">$299 website audit</a> is me going through your site by hand: a phone walkthrough, a form and booking test, and how you compare to your top local competitor. The fee is credited toward your first month if we work together.</p>
+<p>If you want the full picture, my <a href="${SITE}/website-audit">$299 website audit</a> is me going through your site by hand: a phone walkthrough, a form and booking test, and how you compare to your top local competitor. If we work together, the full $299 is credited to your account.</p>
 <p>Jarrod<br>Gorham Web Consulting · Mount Vernon, NY</p>
 </div>`;
 }
 
-function ownerEmailHtml({ name, email, business, report }) {
+function ownerEmailHtml({ name, email, business, report, ref }) {
 	return `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#1e293b;max-width:600px">
 <p><strong>${esc(name)}</strong> (${esc(email)})${business ? `, ${esc(business)}` : ''} just graded
 <a href="${esc(report.finalUrl)}">${esc(report.host)}</a>: <strong>${esc(report.grade)}</strong>${
 		report.score != null ? ` (${report.score}/100)` : ''
 	}.</p>
+<p>Source: <strong>${esc(ref || 'direct / unknown')}</strong></p>
 <p>They were promised a personal follow-up within 24 hours. Reply to this email to answer them directly.</p>
 <table style="border-collapse:collapse;margin:8px 0 16px">${categoryRows(report)}</table>
 ${issueList(report)}

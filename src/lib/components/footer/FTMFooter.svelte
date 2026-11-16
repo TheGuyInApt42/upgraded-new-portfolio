@@ -4,6 +4,7 @@
 
 	import ExternalLink from '@components/external-link/ExternalLink.svelte';
 	import Logo from '@components/logo/Logo.svelte';
+	import { info } from '$lib/config.js';
 	// Store Imports
 	import { theme } from '@stores';
 
@@ -204,6 +205,15 @@
 	<div
 		class="flex flex-col items-center mt-8 pt-8 border-t border-slate-200/50 dark:border-white/10 w-full max-w-screen-xl"
 	>
+		<p class="mb-3 text-center text-sm text-slate-600 dark:text-white/70">
+			<a
+				href="tel:+1{info.phone}"
+				class="font-semibold text-slate-800 hover:text-emerald-700 dark:text-white dark:hover:text-emerald-300"
+				>{info.phoneDisplay}</a
+			>
+			<span aria-hidden="true" class="mx-2">·</span>
+			Based in Mount Vernon, NY, serving Westchester and the Bronx
+		</p>
 		<div class="text-sm font-medium text-slate-500 dark:text-white/50">
 			&copy; {new Date().getFullYear()} Gorham Web Consulting. All rights reserved.
 		</div>

@@ -144,6 +144,14 @@
 				{navLink.label}
 			</a>
 		{/each}
+		<a
+			href="/grade"
+			on:click={closeMenu}
+			data-sveltekit-preload-data="hover"
+			class="mt-4 inline-flex items-center justify-center rounded-full bg-turquoise-accent px-6 py-4 text-lg font-semibold text-slate-900 shadow-lg transition hover:bg-emerald-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+		>
+			Free Website Grade
+		</a>
 	</nav>
 
 	<!-- Social icons -->

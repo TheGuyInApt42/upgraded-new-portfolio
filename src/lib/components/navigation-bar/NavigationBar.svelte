@@ -69,6 +69,13 @@
 						{navLink.label}
 					</a>
 				{/each}
+				<a
+					href="/grade"
+					data-sveltekit-preload-data="hover"
+					class="ml-1 inline-flex items-center rounded-full bg-turquoise-accent px-4 py-2 text-sm font-semibold text-slate-900 no-underline shadow-md transition hover:-translate-y-0.5 hover:bg-emerald-300 hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
+				>
+					Free Website Grade
+				</a>
 				{#if useThemeModeButton}
 					<button
 						on:click={() => toggleTheme()}

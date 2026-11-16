@@ -15,7 +15,8 @@ const COLUMNS = [
 	'message',
 	'grade',
 	'score',
-	'details'
+	'details',
+	'source'
 ];
 
 export async function saveLead(platform, lead) {

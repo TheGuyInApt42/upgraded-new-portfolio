@@ -1,5 +1,8 @@
 <script>
+	import { onMount } from 'svelte';
 	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
+	import { getLeadSource } from '$lib/utils/leadSource.js';
 	import HeadTags from '@components/head-tags/HeadTags.svelte';
 	import { buildReport } from '$lib/grader/checks.js';
 
@@ -8,6 +11,20 @@
 
 	let grading = false;
 	let unlocking = false;
+	let gradeForm;
+	let ref = '';
+
+	// /grade?url=joesroofing.com grades that site as soon as the page opens,
+	// so outreach links land straight on the business's report card.
+	const urlFromLink = $page.url.searchParams.get('url') || '';
+
+	onMount(() => {
+		ref = getLeadSource($page.url);
+		if (urlFromLink && !form && gradeForm) {
+			if (gradeForm.requestSubmit) gradeForm.requestSubmit();
+			else gradeForm.querySelector('button[type="submit"]')?.click();
+		}
+	});
 
 	$: stage = form?.stage || 'start';
 	$: report = form?.findings ? safeReport(form.findings) : null;
@@ -76,6 +93,7 @@
 		</div>
 
 		<form
+			bind:this={gradeForm}
 			method="POST"
 			action="?/grade"
 			class="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row"
@@ -96,11 +114,12 @@
 				autocomplete="url"
 				required
 				placeholder="yourbusiness.com"
-				value={form?.url ?? report?.url ?? ''}
+				value={form?.url ?? report?.url ?? urlFromLink}
 				class={input}
 			/>
 			<!-- honeypot: real people never see or fill this -->
 			<input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+			<input type="hidden" name="ref" value={ref} />
 			<button type="submit" class={btnPrimary} disabled={grading}>
 				{grading ? 'Checking…' : 'Grade my site'}
 			</button>
@@ -193,6 +212,7 @@
 						}}
 					>
 						<input type="hidden" name="findings" value={JSON.stringify(report.findings)} />
+						<input type="hidden" name="ref" value={ref} />
 						<input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 						<div>
 							<label for="name" class="sr-only">First name</label>
@@ -262,7 +282,7 @@
 					<p class="mx-auto mt-3 max-w-xl text-slate-600 dark:text-white/70">
 						This was the automated version. My $299 website audit is me going through your site on a real phone,
 						testing your forms and booking, and comparing you to your top local competitor, then walking you
-						through it on a 30-minute call. The fee is credited toward your first month if we work together.
+						through it on a 30-minute call. If we work together, the full $299 is credited to your account.
 					</p>
 					<div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
 						<a href="/website-audit" class={btnPrimary}>See the $299 audit</a>

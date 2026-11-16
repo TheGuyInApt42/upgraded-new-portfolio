@@ -82,6 +82,6 @@ Run the math. If a haircut is $40 and online booking brings in two extra appoint
 
 ## Not Sure What You Need? Start With the Audit
 
-Before you rebuild — or settle for a $30/month template — find out what's actually broken. The Gorham Web Consulting $299 site audit goes through your current site (or your top competitor's) and gives you a prioritized list: speed issues, mobile problems, missing booking paths, SEO gaps. You keep the report either way, and if you sign up for a plan, the $299 is credited toward your first month.
+Before you rebuild — or settle for a $30/month template — find out what's actually broken. The Gorham Web Consulting $299 site audit goes through your current site (or your top competitor's) and gives you a prioritized list: speed issues, mobile problems, missing booking paths, SEO gaps. You keep the report either way, and if you sign up for a plan, the full $299 is credited to your account.
 
 Ready to talk it through? Visit [Gorham Web Consulting](/) to see how I can build a website that helps your small business grow.

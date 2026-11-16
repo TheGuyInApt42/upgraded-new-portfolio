@@ -88,6 +88,12 @@
 					>
 						Start My $299 Website Audit
 					</a>
+					<a
+						href="/grade"
+						class="mt-3 text-center text-sm font-medium text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
+					>
+						Not sure yet? Get a free grade first →
+					</a>
 				</div>
 				<div
 					class="group flex h-full flex-col justify-between rounded-3xl border border-slate-200 bg-white/80 p-6 text-left shadow-xl shadow-slate-200/50 transition duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-amber-200/60 dark:border-white/10 dark:bg-white/5 dark:shadow-black/40 dark:hover:border-amber-300/60"

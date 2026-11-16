@@ -3,6 +3,7 @@
 	import { onNavigate } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
+	import { captureLeadSource } from '$lib/utils/leadSource.js';
 
 	// Start: External Imports
 
@@ -66,6 +67,9 @@
 			});
 		});
 	}
+
+	// Remember where this visitor came from (?ref=) for lead tracking
+	$: if (browser) captureLeadSource($page.url);
 
 	// Theme reactivity
 	$: if (browser) {

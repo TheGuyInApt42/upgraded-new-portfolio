@@ -65,7 +65,7 @@
 
 	export let footnotes = [
 		'12-month minimum. You always own your domain and content, and the site is fully yours after 24 months — or buy it out anytime.',
-		'The $299 site audit is credited toward your first month.',
+		'Sign up after a $299 site audit and the full fee is credited to your account.',
 		'Prefer to pay upfront? Ask me about one-time pricing.'
 	];
 

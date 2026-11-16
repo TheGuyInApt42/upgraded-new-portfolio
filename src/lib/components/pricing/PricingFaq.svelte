@@ -83,6 +83,12 @@
 				>
 					{ctaLabel}
 				</a>
+				<p class="mt-4 text-sm text-slate-600 dark:text-white/70">
+					Not sure your current site needs replacing?
+					<a href="/grade" class="font-semibold text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
+						>Get a free grade first</a
+					>
+				</p>
 			</div>
 		{/if}
 	</div>

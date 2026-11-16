@@ -177,6 +177,23 @@
 				<svelte:component this={PostContent} />
 			</div>
 
+			<!-- Grader CTA -->
+			<aside
+				class="mt-16 rounded-3xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 p-8 text-center shadow-lg shadow-emerald-100/60 dark:border-emerald-400/20 dark:from-emerald-500/10 dark:via-slate-900/60 dark:to-cyan-500/10 dark:shadow-black/30"
+			>
+				<h2 class="text-2xl font-bold text-slate-900 dark:text-white">How does your website stack up?</h2>
+				<p class="mx-auto mt-3 max-w-xl text-slate-600 dark:text-white/75">
+					Get a free A–F grade for your site in about 20 seconds: mobile speed, Google basics, and how easy it
+					is for customers to call or book you.
+				</p>
+				<a
+					href="/grade"
+					class="mt-6 inline-flex items-center justify-center rounded-full bg-turquoise-accent px-6 py-3 text-sm font-semibold uppercase text-slate-900 no-underline shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-300 hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
+				>
+					Grade my website
+				</a>
+			</aside>
+
 			<!-- Categories Footer -->
 			{#if categories?.length}
 				<footer
