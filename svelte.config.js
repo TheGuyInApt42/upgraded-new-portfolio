@@ -21,7 +21,7 @@ const config = {
 				configPath: 'wrangler.toml',
 				environment: undefined,
 				experimentalJsonConfig: false,
-				persist: false
+				persist: true // keeps the local D1 leads table between dev restarts
 			}
 		}),
 

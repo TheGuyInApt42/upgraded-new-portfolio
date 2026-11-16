@@ -6,3 +6,11 @@ name = "gwc-website"  # Name of your project
 
 [env.production]               # Production-specific environment variables
 DATABASE_URL = "your_production_database_url"
+
+# Lead storage (contact form + site grader). Used by `pnpm dev` via the Cloudflare adapter.
+# Live site: also add this binding in Cloudflare Pages → Settings → Bindings → D1 (variable name DB).
+[[d1_databases]]
+binding = "DB"
+database_name = "gwc-leads"
+database_id = "7a669afc-3b90-402f-a31e-9efe5df21d88"
+migrations_dir = "migrations"

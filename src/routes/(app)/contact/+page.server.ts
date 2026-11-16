@@ -1,4 +1,4 @@
-import { supabase } from '$lib/supabase';
+import { saveLead } from '$lib/server/leads.js';
 import { BREVO_API_KEY } from '$env/static/private';
 
 type LeadPayload = {
@@ -75,7 +75,7 @@ async function addContactToBrevo({
 /** @type {import('./$types').Actions} */
 export const actions = {
 	// First, let's update the 'question' action
-question: async ({ request }) => {
+question: async ({ request, platform }) => {
   const data = await request.formData();
   const formEntries = Object.fromEntries(data.entries());
 
@@ -98,18 +98,10 @@ question: async ({ request }) => {
     form_type: form_type || 'question'
   };
 
-  // Insert to Supabase
-  const { error } = await supabase.from('leads').insert([payload]);
+  // Save to D1 (logs and carries on if storage fails, so Brevo still gets the lead)
+  const saved = await saveLead(platform, payload);
   
-  if (error) {
-    console.error('Supabase insert error:', error.message);
-    return {
-      success: false,
-      error: 'Submission failed. Please try again.'
-    };
-  }
-  
-  // After successful Supabase insert, add contact to Brevo
+  // Add contact to Brevo
   try {
     await addContactToBrevo({
       name,
@@ -121,7 +113,9 @@ question: async ({ request }) => {
     });
   } catch (brevoError) {
     console.error('Brevo API error:', brevoError);
-    // We still return success since the Supabase insert worked
+    if (!saved) {
+      return { success: false, error: 'Submission failed. Please try again.' };
+    }
   }
 
   return {
@@ -131,7 +125,7 @@ question: async ({ request }) => {
 },
 
 // Next, update the 'contact' action
-contact: async ({ request }) => {
+contact: async ({ request, platform }) => {
   const data = await request.formData();
   const formEntries = Object.fromEntries(data.entries());
 
@@ -158,18 +152,10 @@ contact: async ({ request }) => {
     form_type: form_type || 'contact'
   };
 
-  // Insert to Supabase
-  const { error } = await supabase.from('leads').insert([payload]);
-
-  if (error) {
-    console.error('Supabase insert error:', error.message);
-    return {
-      success: false,
-      error: 'Submission failed. Please try again.'
-    };
-  }
+  // Save to D1 (logs and carries on if storage fails, so Brevo still gets the lead)
+  const saved = await saveLead(platform, payload);
   
-  // After successful Supabase insert, add contact to Brevo
+  // Add contact to Brevo
   try {
     await addContactToBrevo({
       name,
@@ -181,7 +167,9 @@ contact: async ({ request }) => {
     });
   } catch (brevoError) {
     console.error('Brevo API error:', brevoError);
-    // We still return success since the Supabase insert worked
+    if (!saved) {
+      return { success: false, error: 'Submission failed. Please try again.' };
+    }
   }
 
   return {
@@ -191,7 +179,7 @@ contact: async ({ request }) => {
 },
 
 // Finally, update the 'interest' action
-interest: async ({ request }) => {
+interest: async ({ request, platform }) => {
   const data = await request.formData();
   const formEntries = Object.fromEntries(data.entries());
 
@@ -216,18 +204,10 @@ interest: async ({ request }) => {
     form_type: form_type || 'interest'
   };
 
-  // Insert to Supabase
-  const { error } = await supabase.from('leads').insert([payload]);
-
-  if (error) {
-    console.error('Supabase insert error:', error.message);
-    return {
-      success: false,
-      error: 'Submission failed. Please try again.'
-    };
-  }
+  // Save to D1 (logs and carries on if storage fails, so Brevo still gets the lead)
+  const saved = await saveLead(platform, payload);
   
-  // After successful Supabase insert, add contact to Brevo
+  // Add contact to Brevo
   try {
     await addContactToBrevo({
       name,
@@ -239,7 +219,9 @@ interest: async ({ request }) => {
     });
   } catch (brevoError) {
     console.error('Brevo API error:', brevoError);
-    // We still return success since the Supabase insert worked
+    if (!saved) {
+      return { success: false, error: 'Submission failed. Please try again.' };
+    }
   }
 
   return {
