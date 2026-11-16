@@ -3,6 +3,7 @@ import { env } from '$env/dynamic/private';
 import { saveLead } from '$lib/server/leads.js';
 import { gradeSite, buildReport, GraderError } from '$lib/grader/checks.js';
 import { cleanRef } from '$lib/utils/leadSource.js';
+import { allowRequest } from '$lib/server/rateLimit.js';
 
 // Form actions can't be prerendered.
 export const prerender = false;
@@ -21,11 +22,21 @@ const clean = (v, max) => String(v ?? '').trim().slice(0, max);
 
 export const actions = {
 	// Step 1: grade the site. The grade and category letters show for free.
-	grade: async ({ request }) => {
+	grade: async (event) => {
+		const { request } = event;
 		const data = await request.formData();
 		if (data.get('website')) return { stage: 'graded', bot: true }; // honeypot
 		const url = clean(data.get('url'), 300);
 		const ref = cleanRef(data.get('ref'));
+
+		// Each grade costs a PageSpeed call plus fetches; cap per IP so it can't be hammered.
+		if (!(await allowRequest(event, 'grade', { limit: 10 }))) {
+			return fail(429, {
+				stage: 'error',
+				url,
+				error: "You've run the maximum number of reports for this hour. Try again later, or email me and I'll run it for you."
+			});
+		}
 
 		try {
 			const findings = await gradeSite(url, { pagespeedKey: env.PAGESPEED_API_KEY });
@@ -39,9 +50,18 @@ export const actions = {
 	},
 
 	// Step 2: email unlocks the full fix list, and I get notified to follow up.
-	report: async ({ request, platform }) => {
+	report: async (event) => {
+		const { request, platform } = event;
 		const data = await request.formData();
 		if (data.get('website')) return { stage: 'report', bot: true }; // honeypot
+
+		// This action sends emails, so it gets a tighter cap than grading.
+		if (!(await allowRequest(event, 'report', { limit: 5 }))) {
+			return fail(429, {
+				stage: 'error',
+				error: "Too many requests from your connection. Please try again in an hour, or email me directly."
+			});
+		}
 
 		const name = clean(data.get('name'), 100);
 		const email = clean(data.get('email'), 200).toLowerCase();
